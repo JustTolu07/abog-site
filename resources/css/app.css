@@ -74,11 +74,56 @@ html.lenis.lenis-stopped {
 }
 
 .collection-nav-item.active .collection-nav-btn {
-    color: #1c1917; /* Tailwind stone-900 */
+    color: #8c7b6d; /* accent color */
     font-size: clamp(3.2rem, 5.5vw, 5rem);
     font-weight: 800;
     letter-spacing: -0.04em;
 }
+
+/* Ensure aria-pressed also reflects the accent color when set programmatically */
+.collection-nav-item .collection-nav-btn[aria-pressed="true"] {
+    color: #8c7b6d;
+}
+
+/* Uniform visible signifier (underline) and improved keyboard focus */
+.collection-nav-item .collection-nav-btn {
+    position: relative;
+}
+
+
+.collection-nav-item .collection-nav-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    height: 4px;
+    width: 0;
+    background: #8c7b6d; /* accent color */
+    border-radius: 9999px;
+    transition: width 0.35s cubic-bezier(.2,.9,.2,1), opacity 0.25s ease;
+    opacity: 0;
+}
+
+.collection-nav-item.active .collection-nav-btn::after,
+.collection-nav-item .collection-nav-btn[aria-pressed="true"]::after {
+    width: clamp(2rem, 6vw, 3.6rem);
+    opacity: 1;
+}
+
+.collection-nav-item .collection-nav-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 6px rgba(140,123,109,0.10);
+    border-radius: 6px;
+}
+
+/* Desktop nav active underline and color */
+.nav-link[aria-current="page"] {
+    color: #ffffff !important;
+}
+.nav-link[aria-current="page"] .nav-line {
+    transform: scaleX(1) !important;
+}
+.nav-line { transform-origin: left; transform: scaleX(0); transition: transform 0.25s ease; }
 
 /* Styling for absolute overlap sets */
 .collection-image-set {
@@ -89,6 +134,19 @@ html.lenis.lenis-stopped {
 }
 .collection-image-set.pointer-events-none {
     z-index: 0;
+}
+
+/* Process page styles */
+.process-section { background: #f5f3ef; }
+.process-nav .process-nav-item { list-style: none; }
+.process-nav .process-nav-btn { font-size: clamp(1rem, 1.5vw, 1.15rem); color: #6b635d; font-weight: 700; }
+.process-nav .process-nav-item.active .process-nav-btn { color: #8c7b6d; }
+.process-stage { transform: translateY(0); transition: opacity 0.4s ease, transform 0.4s ease; }
+.process-stage .process-image-wrap img { display: block; }
+
+@media (max-width: 767px) {
+    .process-nav { position: relative; top: auto; }
+    .process-stage img { height: 260px; }
 }
 
 /* About page: architectural structure, material warmth, and editorial space. */

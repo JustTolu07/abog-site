@@ -1,34 +1,458 @@
 @extends('layouts.app')
 
-@section('title', 'About ABog — 36 Years of Building What Lasts')
-@section('meta_description', 'Since 1990, ABog has been creating furniture and spaces shaped by craftsmanship, people, and an appreciation for things made to last.')
+@section('title', 'The Collections — ABog Furniture')
+@section('meta_description', 'Explore ABog Collections — Architectural furniture, seating, tables, bedrooms, kitchens, offices, and bespoke hospitality spaces crafted to endure.')
 
 @section('content')
-<x-navbar />
-<article class="about-page overflow-hidden bg-stone-950" data-about-page>
-    <section class="relative min-h-screen bg-stone-950 px-6 pb-20 pt-32 text-stone-100 md:px-16 md:pt-40 lg:px-24" aria-labelledby="about-hero-title">
-        <div class="about-hero-grid pointer-events-none absolute inset-0 opacity-40"></div>
-        <div class="relative mx-auto flex min-h-[calc(100vh-10rem)] max-w-7xl flex-col justify-between">
-            <div><p class="about-kicker mb-8">THE ABOG STORY</p><h1 id="about-hero-title" class="font-display text-[15vw] font-black leading-[.82] tracking-tighter sm:text-7xl md:text-8xl lg:text-[9.4rem] xl:text-[11rem]"><span class="about-hero-line block overflow-hidden"><span class="about-hero-word inline-block">36 YEARS</span></span><span class="about-hero-line block overflow-hidden"><span class="about-hero-word inline-block">OF BUILDING</span></span><span class="about-hero-line block overflow-hidden text-[#8c7b6d]"><span class="about-hero-word inline-block">WHAT LASTS.</span></span></h1></div>
-            <div class="mt-20 grid grid-cols-1 gap-8 border-t border-stone-800 pt-7 md:grid-cols-12"><p class="about-hero-copy max-w-xl text-base leading-relaxed text-stone-300 md:col-span-7 md:text-lg">Some things are built in a day. Others take years of learning, changing, making mistakes, getting better, and showing up again. Abog is one of them.</p><p class="about-hero-copy max-w-md text-sm leading-relaxed text-stone-400 md:col-span-4 md:col-start-9">Since 1990, we have been creating furniture and spaces shaped by craftsmanship, people, and an appreciation for things made to last. <span class="text-stone-100">36 years later, we are still building.</span></p><p class="about-hero-meta text-xs font-semibold uppercase tracking-[.22em] text-stone-500 md:col-span-1 md:text-right">Est. 1990</p></div>
+    <x-navbar />
+
+    <section id="collections-page" data-header-theme="light" class="relative z-40 w-full bg-[#f5f3ef] text-stone-900 select-none pt-28 pb-24 px-6 md:px-16 lg:px-24 overflow-hidden">
+        <!-- Subtle architectural grid background -->
+        <div class="absolute inset-0 pointer-events-none opacity-30 bg-[linear-gradient(to_right,#e5e1da_1px,transparent_1px),linear-gradient(to_bottom,#e5e1da_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            
+            <!-- 1. EDITORIAL HERO -->
+            <div class="mb-16 border-b border-stone-300/80 pb-12">
+                <div class="inline-flex items-center gap-3 mb-6">
+                    <span class="w-8 h-[2px] bg-[#8c7b6d]"></span>
+                    <span class="text-[#8c7b6d] font-sans font-bold text-xs md:text-sm tracking-[0.25em] uppercase">03 The Collections</span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+                    <div class="lg:col-span-8">
+                        <h1 class="font-display font-black text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[0.92] text-stone-900">
+                            THE COLLECTIONS
+                        </h1>
+                        <h2 class="font-display font-bold text-2xl md:text-4xl leading-tight text-[#8c7b6d] mt-4 tracking-tight">
+                            MADE FOR THE WAY YOU LIVE.
+                        </h2>
+                    </div>
+                    <div class="lg:col-span-4">
+                        <p class="text-stone-700 text-base md:text-lg font-normal leading-relaxed">
+                            A digital showroom and archive of objects made with intention. Guided by our <strong class="text-stone-900 font-semibold">Grid & Grain</strong> philosophy — marrying structural architectural discipline with tactile wood soul.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. GALLERY INDEX CATEGORY NAVIGATION -->
+            <div class="mb-16">
+                <div class="flex items-center justify-between border-b border-stone-300/60 pb-4 mb-8">
+                    <span class="text-xs font-mono tracking-widest uppercase text-stone-500">Curated Gallery Index</span>
+                    <span id="gallery-count-indicator" class="text-xs font-mono text-[#8c7b6d] font-bold">Showing All 12 Works</span>
+                </div>
+
+                <nav aria-label="Collections Categories" class="collections-gallery-nav">
+                    <div class="flex items-center gap-2 md:gap-3 overflow-x-auto pb-4 hide-scrollbar">
+                        <button type="button" data-filter="all" class="cat-filter-btn active px-5 py-2.5 rounded-full text-xs md:text-sm font-sans font-semibold tracking-wider transition-all duration-300 border border-[#8c7b6d] bg-[#8c7b6d] text-white shadow-sm">
+                            ALL <span class="ml-1 opacity-75 font-mono text-[10px]">[12]</span>
+                        </button>
+                        <button type="button" data-filter="seating" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-sans font-semibold tracking-wider transition-all duration-300 border border-stone-300 bg-white/70 text-stone-700 hover:border-stone-500">
+                            SEATING <span class="ml-1 opacity-60 font-mono text-[10px]">[3]</span>
+                        </button>
+                        <button type="button" data-filter="tables" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-sans font-semibold tracking-wider transition-all duration-300 border border-stone-300 bg-white/70 text-stone-700 hover:border-stone-500">
+                            TABLES <span class="ml-1 opacity-60 font-mono text-[10px]">[2]</span>
+                        </button>
+                        <button type="button" data-filter="bedroom" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-sans font-semibold tracking-wider transition-all duration-300 border border-stone-300 bg-white/70 text-stone-700 hover:border-stone-500">
+                            BEDROOM <span class="ml-1 opacity-60 font-mono text-[10px]">[2]</span>
+                        </button>
+                        <button type="button" data-filter="kitchen" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-sans font-semibold tracking-wider transition-all duration-300 border border-stone-300 bg-white/70 text-stone-700 hover:border-stone-500">
+                            KITCHEN <span class="ml-1 opacity-60 font-mono text-[10px]">[2]</span>
+                        </button>
+                        <button type="button" data-filter="office" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-sans font-semibold tracking-wider transition-all duration-300 border border-stone-300 bg-white/70 text-stone-700 hover:border-stone-500">
+                            OFFICE <span class="ml-1 opacity-60 font-mono text-[10px]">[2]</span>
+                        </button>
+                        <button type="button" data-filter="living-room" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-sans font-semibold tracking-wider transition-all duration-300 border border-stone-300 bg-white/70 text-stone-700 hover:border-stone-500">
+                            LIVING ROOM <span class="ml-1 opacity-60 font-mono text-[10px]">[3]</span>
+                        </button>
+                        <button type="button" data-filter="dining" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-sans font-semibold tracking-wider transition-all duration-300 border border-stone-300 bg-white/70 text-stone-700 hover:border-stone-500">
+                            DINING <span class="ml-1 opacity-60 font-mono text-[10px]">[2]</span>
+                        </button>
+                        <button type="button" data-filter="hospitality" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-sans font-semibold tracking-wider transition-all duration-300 border border-stone-300 bg-white/70 text-stone-700 hover:border-stone-500">
+                            HOSPITALITY <span class="ml-1 opacity-60 font-mono text-[10px]">[1]</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- 3. ASYMMETRIC EDITORIAL PRODUCT GALLERY GRID -->
+            <div id="collections-gallery-grid" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
+
+                <!-- ITEM 1: FEATURE HERO (Span 8) -->
+                <div class="product-gallery-card md:col-span-8 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="living-room seating">
+                    <div class="relative overflow-hidden aspect-[16/10] bg-stone-200">
+                        <img src="{{ asset('assets/collections/living-room-main.png') }}" 
+                             alt="Yaba Sculptural Architectural Armchair" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Living Room &bull; Seating
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 01</span>
+                            <h3 class="font-display font-bold text-2xl md:text-3xl text-stone-900">Yaba Sculptural Armchair</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Yaba Sculptural Armchair" 
+                                data-product-category="Living Room / Seating"
+                                data-product-img="{{ asset('assets/collections/living-room-main.png') }}"
+                                class="open-quote-modal inline-flex items-center justify-center px-6 py-3 bg-stone-900 hover:bg-[#8c7b6d] text-white font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300 shadow-md">
+                            <span>Request Quote</span>
+                            <span class="ml-2 font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITEM 2: PORTRAIT CARD (Span 4) -->
+                <div class="product-gallery-card md:col-span-4 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="living-room">
+                    <div class="relative overflow-hidden aspect-[4/5] bg-stone-200">
+                        <img src="{{ asset('assets/collections/living-room-sub1.png') }}" 
+                             alt="Akoka Fluted Wooden Credenza" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Living Room
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 02</span>
+                            <h3 class="font-display font-bold text-xl md:text-2xl text-stone-900">Akoka Fluted Credenza</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Akoka Fluted Credenza" 
+                                data-product-category="Living Room / Credenza"
+                                data-product-img="{{ asset('assets/collections/living-room-sub1.png') }}"
+                                class="open-quote-modal w-full inline-flex items-center justify-between px-5 py-2.5 bg-stone-100 hover:bg-[#8c7b6d] hover:text-white text-stone-900 font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300">
+                            <span>Request Quote</span>
+                            <span class="font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITEM 3: TALL PORTRAIT CARD (Span 4) -->
+                <div class="product-gallery-card md:col-span-4 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="bedroom">
+                    <div class="relative overflow-hidden aspect-[4/5] bg-stone-200">
+                        <img src="{{ asset('assets/collections/bedroom-main.png') }}" 
+                             alt="Abeokuta Architectural Platform Bed" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Bedroom
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 03</span>
+                            <h3 class="font-display font-bold text-xl md:text-2xl text-stone-900">Abeokuta Platform Bed</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Abeokuta Architectural Platform Bed" 
+                                data-product-category="Bedroom"
+                                data-product-img="{{ asset('assets/collections/bedroom-main.png') }}"
+                                class="open-quote-modal w-full inline-flex items-center justify-between px-5 py-2.5 bg-stone-100 hover:bg-[#8c7b6d] hover:text-white text-stone-900 font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300">
+                            <span>Request Quote</span>
+                            <span class="font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITEM 4: FEATURE PANORAMA (Span 8) -->
+                <div class="product-gallery-card md:col-span-8 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="kitchen tables">
+                    <div class="relative overflow-hidden aspect-[16/9] bg-stone-200">
+                        <img src="{{ asset('assets/collections/kitchen-main.png') }}" 
+                             alt="Akoka Integrated Kitchen Island & Dining Table" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Kitchen &bull; Tables
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 04</span>
+                            <h3 class="font-display font-bold text-2xl md:text-3xl text-stone-900">Akoka Integrated Kitchen Island</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Akoka Integrated Kitchen Island" 
+                                data-product-category="Kitchen / Tables"
+                                data-product-img="{{ asset('assets/collections/kitchen-main.png') }}"
+                                class="open-quote-modal inline-flex items-center justify-center px-6 py-3 bg-stone-900 hover:bg-[#8c7b6d] text-white font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300 shadow-md">
+                            <span>Request Quote</span>
+                            <span class="ml-2 font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITEM 5: OFFICE FEATURE (Span 6) -->
+                <div class="product-gallery-card md:col-span-6 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="office tables">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-stone-200">
+                        <img src="{{ asset('assets/collections/office-main.png') }}" 
+                             alt="Ikoyi Executive Architectural Desk" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Office &bull; Tables
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 05</span>
+                            <h3 class="font-display font-bold text-xl md:text-2xl text-stone-900">Ikoyi Executive Desk</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Ikoyi Executive Desk" 
+                                data-product-category="Office / Desk"
+                                data-product-img="{{ asset('assets/collections/office-main.png') }}"
+                                class="open-quote-modal w-full inline-flex items-center justify-between px-5 py-2.5 bg-stone-100 hover:bg-[#8c7b6d] hover:text-white text-stone-900 font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300">
+                            <span>Request Quote</span>
+                            <span class="font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITEM 6: DINING FEATURE (Span 6) -->
+                <div class="product-gallery-card md:col-span-6 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="dining tables">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-stone-200">
+                        <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-05.jpg') }}" 
+                             alt="Ogun Solid Teak 10-Seater Dining Table" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Dining &bull; Tables
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 06</span>
+                            <h3 class="font-display font-bold text-xl md:text-2xl text-stone-900">Ogun Solid Teak Dining Table</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Ogun Solid Teak Dining Table" 
+                                data-product-category="Dining / Tables"
+                                data-product-img="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-05.jpg') }}"
+                                class="open-quote-modal w-full inline-flex items-center justify-between px-5 py-2.5 bg-stone-100 hover:bg-[#8c7b6d] hover:text-white text-stone-900 font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300">
+                            <span>Request Quote</span>
+                            <span class="font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITEM 7: SEATING BAR STOOL (Span 4) -->
+                <div class="product-gallery-card md:col-span-4 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="kitchen seating">
+                    <div class="relative overflow-hidden aspect-square bg-stone-200">
+                        <img src="{{ asset('assets/collections/kitchen-sub1.png') }}" 
+                             alt="Surulere Brass & Oak Bar Stool" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Kitchen &bull; Seating
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 07</span>
+                            <h3 class="font-display font-bold text-xl text-stone-900">Surulere Bar Stool</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Surulere Bar Stool" 
+                                data-product-category="Kitchen / Seating"
+                                data-product-img="{{ asset('assets/collections/kitchen-sub1.png') }}"
+                                class="open-quote-modal w-full inline-flex items-center justify-between px-5 py-2.5 bg-stone-100 hover:bg-[#8c7b6d] hover:text-white text-stone-900 font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300">
+                            <span>Request Quote</span>
+                            <span class="font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITEM 8: BEDROOM NIGHTSTAND (Span 4) -->
+                <div class="product-gallery-card md:col-span-4 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="bedroom">
+                    <div class="relative overflow-hidden aspect-square bg-stone-200">
+                        <img src="{{ asset('assets/collections/bedroom-sub1.png') }}" 
+                             alt="Marina Floating Oak Nightstand" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Bedroom
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 08</span>
+                            <h3 class="font-display font-bold text-xl text-stone-900">Marina Floating Nightstand</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Marina Floating Nightstand" 
+                                data-product-category="Bedroom"
+                                data-product-img="{{ asset('assets/collections/bedroom-sub1.png') }}"
+                                class="open-quote-modal w-full inline-flex items-center justify-between px-5 py-2.5 bg-stone-100 hover:bg-[#8c7b6d] hover:text-white text-stone-900 font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300">
+                            <span>Request Quote</span>
+                            <span class="font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITEM 9: HOSPITALITY RECEPTION (Span 4) -->
+                <div class="product-gallery-card md:col-span-4 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="hospitality seating">
+                    <div class="relative overflow-hidden aspect-square bg-stone-200">
+                        <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-13.jpg') }}" 
+                             alt="Eko Lounge Hospitality Counter & Banquette" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Hospitality
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 09</span>
+                            <h3 class="font-display font-bold text-xl text-stone-900">Eko Hospitality Lounge</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Eko Hospitality Lounge" 
+                                data-product-category="Hospitality"
+                                data-product-img="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-13.jpg') }}"
+                                class="open-quote-modal w-full inline-flex items-center justify-between px-5 py-2.5 bg-stone-100 hover:bg-[#8c7b6d] hover:text-white text-stone-900 font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300">
+                            <span>Request Quote</span>
+                            <span class="font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITEM 10: OFFICE CREDENZA (Span 6) -->
+                <div class="product-gallery-card md:col-span-6 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="office living-room">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-stone-200">
+                        <img src="{{ asset('assets/collections/office-sub2.png') }}" 
+                             alt="Ajao Storage Credenza" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Office &bull; Living Room
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 10</span>
+                            <h3 class="font-display font-bold text-xl md:text-2xl text-stone-900">Ajao Architectural Credenza</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Ajao Architectural Credenza" 
+                                data-product-category="Office / Living Room"
+                                data-product-img="{{ asset('assets/collections/office-sub2.png') }}"
+                                class="open-quote-modal w-full inline-flex items-center justify-between px-5 py-2.5 bg-stone-100 hover:bg-[#8c7b6d] hover:text-white text-stone-900 font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300">
+                            <span>Request Quote</span>
+                            <span class="font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITEM 11: DINING CANE CHAIR (Span 6) -->
+                <div class="product-gallery-card md:col-span-6 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="dining seating">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-stone-200">
+                        <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-18.jpg') }}" 
+                             alt="Lekki Cane-Back Dining Chair" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Dining &bull; Seating
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 11</span>
+                            <h3 class="font-display font-bold text-xl md:text-2xl text-stone-900">Lekki Cane-Back Dining Chair</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Lekki Cane-Back Dining Chair" 
+                                data-product-category="Dining / Seating"
+                                data-product-img="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-18.jpg') }}"
+                                class="open-quote-modal w-full inline-flex items-center justify-between px-5 py-2.5 bg-stone-100 hover:bg-[#8c7b6d] hover:text-white text-stone-900 font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300">
+                            <span>Request Quote</span>
+                            <span class="font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ITEM 12: LIVING ROOM SHELVING (Span 12) -->
+                <div class="product-gallery-card md:col-span-12 group bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-category="living-room">
+                    <div class="relative overflow-hidden aspect-[21/9] bg-stone-200">
+                        <img src="{{ asset('assets/collections/living-room-sub2.png') }}" 
+                             alt="Victoria Fluted Modular Shelving Unit" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full uppercase tracking-wider">
+                            Living Room
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-1">Collection N&deg; 12</span>
+                            <h3 class="font-display font-bold text-2xl md:text-3xl text-stone-900">Victoria Modular Shelving System</h3>
+                        </div>
+                        <button type="button" 
+                                data-product-title="Victoria Modular Shelving System" 
+                                data-product-category="Living Room"
+                                data-product-img="{{ asset('assets/collections/living-room-sub2.png') }}"
+                                class="open-quote-modal inline-flex items-center justify-center px-6 py-3 bg-stone-900 hover:bg-[#8c7b6d] text-white font-sans text-xs font-semibold rounded-full tracking-wider uppercase transition-all duration-300 shadow-md">
+                            <span>Request Quote</span>
+                            <span class="ml-2 font-light text-base">&rsaquo;</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <section class="relative bg-[#f5f3ef] px-6 py-24 text-stone-900 md:px-16 md:py-36 lg:px-24" data-header-theme="light"><div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-12"><p class="about-kicker lg:col-span-4">01 — THE NAME</p><div class="lg:col-span-8"><h2 class="about-section-title">IT STARTED<br>WITH A NAME.</h2><div class="about-name-stage relative my-16 min-h-[20rem] overflow-hidden border-y border-stone-300 py-8 md:min-h-[28rem]"><div class="about-name-grid absolute inset-0"></div><div class="relative flex min-h-[16rem] items-center justify-between md:min-h-[22rem]"><span class="about-name-part">AB</span><span class="about-name-plus">+</span><span class="about-name-part">OG</span></div><p class="about-name-lockup">ABOG</p></div><div class="grid max-w-3xl gap-8 text-base leading-relaxed text-stone-600 md:grid-cols-2 md:text-lg"><p><strong class="text-stone-900">AB</strong> — Abidoun.<br><strong class="text-stone-900">OG</strong> — Ogunleye.</p><p>ABOG began with the first two letters of our founder's name, Abidoun Ogunleye. What started as a simple name in 1990 became the beginning of a much bigger story.</p></div><div class="mt-10 max-w-2xl space-y-5 text-base leading-relaxed text-stone-600 md:text-lg"><p>A story built one piece at a time. One customer at a time. One relationship at a time.</p><p>And as the years passed, ABOG became more than the name of a business.</p><p class="font-semibold text-stone-900">It became something people built together.</p></div></div></div></section>
+    <!-- REQUEST QUOTE CONCIERGE MODAL DIALOG -->
+    <div id="quote-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-400">
+        <div class="bg-white text-stone-900 w-full max-w-xl rounded-3xl border border-stone-200 shadow-2xl overflow-hidden relative transform translate-y-6 transition-transform duration-400">
+            
+            <button type="button" id="close-quote-modal" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-stone-600 transition-colors z-10" aria-label="Close dialog">
+                &times;
+            </button>
 
-    <section class="bg-stone-950 px-6 py-24 text-stone-100 md:px-16 md:py-36 lg:px-24"><div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12"><div class="lg:col-span-4"><p class="about-kicker">02 — MEET THE FOUNDER</p><figure class="about-founder-image relative mt-10 aspect-[4/5] max-w-sm overflow-hidden bg-stone-900 md:mt-16"><img src="{{ asset('assets/abog-boss.png') }}" alt="Abidoun Ogunleye, founder of ABog" class="h-full w-full object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950/90 p-5 pt-16 text-xs uppercase tracking-[.18em] text-stone-300">A beginning that became shared work</figcaption></figure></div><div class="flex flex-col justify-end lg:col-span-7 lg:col-start-6"><h2 class="about-section-title text-stone-100">MEET THE<br>FOUNDER.</h2><div class="mt-12 max-w-2xl space-y-6 text-base leading-relaxed text-stone-400 md:text-lg"><p>Over 36 years, a lot has changed. The way people live has changed. The way people work has changed. Design has changed. Technology has changed.</p><p>And we have changed with them.</p><p>What began with furniture has grown into a broader way of thinking about spaces — bringing together furniture, manufacturing, interiors and complete spatial solutions.</p><p>From individual pieces to larger projects, our work has always come back to the same question:</p><p class="font-display text-3xl font-bold leading-tight tracking-tight text-stone-100 md:text-5xl">How can we make this better?</p><p>That question has kept us moving for 36 years.</p></div></div></div></section>
+            <div class="p-8">
+                <div class="flex items-center gap-4 pb-6 border-b border-stone-200 mb-6">
+                    <img id="modal-product-img" src="" alt="" class="w-16 h-16 rounded-xl object-cover border border-stone-200" />
+                    <div>
+                        <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-wider">Bespoke Inquiry</span>
+                        <h3 id="modal-product-title" class="font-display font-bold text-xl text-stone-900"></h3>
+                        <p id="modal-product-category" class="text-xs text-stone-500 font-mono"></p>
+                    </div>
+                </div>
 
-    <section class="bg-[#f5f3ef] px-6 py-24 text-stone-900 md:px-16 md:py-36 lg:px-24" data-header-theme="light"><div class="mx-auto max-w-7xl"><div class="grid gap-12 lg:grid-cols-12"><p class="about-kicker lg:col-span-4">03 — MORE THAN WHAT WE MAKE</p><h2 class="about-section-title max-w-5xl lg:col-span-8">WE BELIEVE THE THINGS AROUND US MATTER.</h2></div><div class="mt-16 grid gap-12 lg:grid-cols-12"><figure class="about-project-image relative aspect-[4/3] overflow-hidden bg-stone-200 lg:col-span-6"><img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-00-45.jpg') }}" alt="ABog-made interior space" class="h-[112%] w-full object-cover" loading="lazy"></figure><div class="flex flex-col justify-center lg:col-span-5 lg:col-start-8"><div class="space-y-5 text-lg leading-relaxed text-stone-600 md:text-xl"><p class="about-belief-line">A chair is not just a chair.</p><p class="about-belief-line">A desk is not just a desk.</p><p class="about-belief-line">A room is not just four walls filled with things.</p></div><div class="mt-10 space-y-5 text-base leading-relaxed text-stone-600 md:text-lg"><p>The spaces around us influence how we work, how we rest, how we connect, and how we feel.</p><p>That's why we care about more than making something that looks good. We think about how it feels to use, how it fits into a space, how it holds up over time, and whether it still feels right years after it was made.</p><p class="font-semibold text-stone-900">Because good design should live well.</p></div></div></div></div></section>
+                <form id="quote-modal-form" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-mono uppercase tracking-wider text-stone-600 mb-1">Selected Material / Timber Finish</label>
+                        <select class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm font-sans focus:outline-none focus:border-[#8c7b6d]">
+                            <option>Natural African Teak (Solid)</option>
+                            <option>Ebonized Hardwood</option>
+                            <option>Brushed Solid Brass Accents</option>
+                            <option>Tactile Bouclé Fabric Upholstery</option>
+                        </select>
+                    </div>
 
-    <section class="bg-stone-900 px-6 py-24 text-stone-100 md:px-16 md:py-36 lg:px-24"><div class="mx-auto max-w-7xl"><div class="grid gap-12 lg:grid-cols-12"><p class="about-kicker lg:col-span-4">04 — THE PEOPLE BEHIND IT</p><h2 class="about-section-title max-w-4xl text-stone-100 lg:col-span-8">NO LEGACY IS BUILT ALONE.</h2><div class="about-team-grid grid gap-px overflow-hidden border border-stone-700 bg-stone-700 sm:grid-cols-2 lg:col-span-12 lg:grid-cols-4"><article class="about-team-card relative min-h-[24rem] overflow-hidden bg-stone-950 p-6"><img src="{{ asset('assets/abog-boss.png') }}" alt="Abidoun Ogunleye, founder of ABog" class="absolute inset-0 h-full w-full object-cover opacity-60"><div class="absolute inset-0 bg-gradient-to-t from-stone-950 to-transparent"></div><div class="relative flex h-full min-h-[19rem] flex-col justify-end"><p class="text-xs font-semibold uppercase tracking-[.2em] text-[#c7b6a7]">01 — Founder</p><h3 class="mt-3 font-display text-3xl font-black leading-none tracking-tighter">ABIDOUN<br>OGUNLEYE</h3><p class="mt-3 text-sm text-stone-300">The name and the beginning.</p></div></article><article class="about-team-card bg-stone-900 p-6"><p class="text-xs font-semibold uppercase tracking-[.2em] text-[#8c7b6d]">02 — The makers</p><img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-18.jpg') }}" alt="ABog craftsmanship detail" class="mt-8 aspect-square w-full object-cover"><p class="mt-6 text-sm leading-relaxed text-stone-400">The hands and care that turn material into work made to live with.</p></article><article class="about-team-card bg-stone-900 p-6"><p class="text-xs font-semibold uppercase tracking-[.2em] text-[#8c7b6d]">03 — The design team</p><img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-13.jpg') }}" alt="ABog design detail" class="mt-8 aspect-square w-full object-cover"><p class="mt-6 text-sm leading-relaxed text-stone-400">The minds that translate how people live into spaces that work beautifully.</p></article><article class="about-team-card bg-stone-900 p-6"><p class="text-xs font-semibold uppercase tracking-[.2em] text-[#8c7b6d]">04 — Project teams</p><img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-07.jpg') }}" alt="ABog project installation detail" class="mt-8 aspect-square w-full object-cover"><p class="mt-6 text-sm leading-relaxed text-stone-400">The people who solve, coordinate and bring the work into the world.</p></article></div></div><div class="mt-16 grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-12"><figure class="about-people-image col-span-1 overflow-hidden bg-stone-800 lg:col-span-4 lg:mt-20"><img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-13.jpg') }}" alt="Detail from an ABog project" class="h-full w-full object-cover" loading="lazy"></figure><figure class="about-people-image col-span-1 overflow-hidden bg-stone-800 lg:col-span-4"><img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-18.jpg') }}" alt="ABog project interior detail" class="h-full w-full object-cover" loading="lazy"></figure><div class="col-span-2 flex items-center lg:col-span-4"><div class="space-y-5 pt-10 text-base leading-relaxed text-stone-400 md:text-lg lg:pt-0"><p>For 36 years, Abog has been shaped by people: the hands that make, the minds that design, the teams that solve problems, the partners who build alongside us, and the customers who trust us with their spaces.</p><p>Every one of them has added something to the story.</p><p class="font-semibold text-stone-100">That is what makes Abog what it is today.</p><p>Not one person. Not one moment. But thousands of small contributions, gathered over time.</p></div></div></div></div></section>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-stone-600 mb-1">Your Name</label>
+                            <input type="text" required placeholder="Abidoun Ogunleye" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm font-sans focus:outline-none focus:border-[#8c7b6d]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-stone-600 mb-1">Email / Contact</label>
+                            <input type="email" required placeholder="client@abog.com" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm font-sans focus:outline-none focus:border-[#8c7b6d]">
+                        </div>
+                    </div>
 
-    <section class="relative overflow-hidden bg-[#8c7b6d] px-6 py-24 text-stone-100 md:px-16 md:py-36 lg:px-24"><div class="about-reach-lines absolute inset-0 opacity-30"></div><div class="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-12"><div class="lg:col-span-5"><p class="about-kicker text-stone-200">05 — OUR REACH</p><h2 class="about-section-title mt-10">BUILT HERE.<br>MADE TO GO FURTHER.</h2><p class="mt-10 max-w-xl text-base leading-relaxed text-stone-200 md:text-lg">From our 10,000m² industrial facility in Ogun State, we continue to build with the capacity to take on projects at scale. Our work now reaches across Nigeria, serving homes, businesses, institutions and spaces of many different kinds.</p></div><div class="flex flex-col justify-end lg:col-span-6 lg:col-start-7"><p class="about-reach-number">36</p><div class="mt-8 border-t border-stone-100/30 pt-5"><p class="font-display text-3xl font-black tracking-tighter md:text-5xl">STATES</p><p class="mt-2 text-xs font-semibold uppercase tracking-[.22em] text-stone-200">One standard. One name.</p></div></div></div></section>
+                    <div>
+                        <label class="block text-xs font-mono uppercase tracking-wider text-stone-600 mb-1">Project Notes / Dimensions</label>
+                        <textarea rows="3" placeholder="Tell us about your space or custom dimensions..." class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm font-sans focus:outline-none focus:border-[#8c7b6d]"></textarea>
+                    </div>
 
-    <section class="overflow-hidden bg-stone-950 px-6 py-24 text-stone-100 md:px-16 md:py-36 lg:px-24"><div class="mx-auto max-w-7xl"><p class="about-kicker">06 — THE GRID &amp; THE GRAIN</p><div class="mt-12 grid gap-12 lg:grid-cols-12"><div class="lg:col-span-7"><h2 class="about-section-title text-stone-100">TWO THINGS CAN BE TRUE AT ONCE.</h2><div class="mt-14 max-w-xl space-y-6 text-base leading-relaxed text-stone-400 md:text-lg"><p><strong class="text-stone-100">The Grid</strong> is structure. Precision. Order. Function.</p><p><strong class="text-stone-100">The Grain</strong> is character. Texture. Craft. Humanity.</p><p>Together, they represent how we see design. We believe great spaces need both — the discipline to work beautifully and the character to feel alive.</p><p class="font-semibold text-stone-100">The Grid gives it structure.<br>The Grain gives it soul.</p></div></div><div class="relative min-h-[31rem] overflow-hidden border border-stone-800 bg-stone-900 lg:col-span-4 lg:col-start-9"><div class="about-grain-image absolute inset-0"><img src="{{ asset('assets/collections/living-room-sub1.png') }}" alt="Detail of ABog furniture craftsmanship" class="h-[118%] w-full object-cover" loading="lazy"></div><div class="about-grid-overlay absolute inset-0"></div><p class="about-grid-word">GRID</p><p class="about-grain-word">GRAIN</p></div></div></div></section>
+                    <button type="submit" class="w-full py-3.5 bg-[#8c7b6d] hover:bg-[#7a6a5c] text-white font-sans text-sm font-semibold rounded-full uppercase tracking-wider transition-colors shadow-md">
+                        Submit Quote Request
+                    </button>
+                </form>
 
-    <section class="relative overflow-hidden bg-[#f5f3ef] px-6 py-24 text-stone-900 md:px-16 md:py-36 lg:px-24" data-header-theme="light"><div class="about-years-ring absolute left-1/2 top-1/2 h-[85vw] w-[85vw] -translate-x-1/2 -translate-y-1/2 rounded-full border border-stone-300 md:h-[55rem] md:w-[55rem]"></div><div class="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12"><div class="lg:col-span-5"><p class="about-kicker">07 — 36 YEARS</p><p class="about-years-number">36</p></div><div class="lg:col-span-6 lg:col-start-7"><h2 class="about-section-title text-4xl md:text-6xl">YEARS OF MAKING.<br>YEARS OF LEARNING.<br><span class="text-[#8c7b6d]">YEARS OF PEOPLE, SPACES AND MEMORIES.</span></h2><div class="mt-12 max-w-xl space-y-5 text-base leading-relaxed text-stone-600 md:text-lg"><p>We respect where we came from. But we don't want to simply preserve it.</p><p>The world is changing. So are the spaces we live and work in. We're continuing to learn, experiment, improve and rethink what Abog can become.</p><p>Our experience gives us the foundation. Curiosity keeps us moving. And the next chapter is already taking shape.</p></div></div></div></section>
+                <div id="quote-success-notice" class="hidden p-6 text-center">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-3 text-xl font-bold">&check;</div>
+                    <h4 class="font-display font-bold text-lg text-stone-900">Inquiry Received</h4>
+                    <p class="text-xs text-stone-600 mt-1">Our atelier team will contact you within 24 hours with custom specifications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <section class="bg-stone-950 px-6 py-28 text-stone-100 md:px-16 md:py-40 lg:px-24"><div class="mx-auto max-w-7xl"><p class="about-kicker">08 — THE NEXT CHAPTER</p><div class="mt-12 border-b border-stone-800 pb-16 md:mt-16 md:pb-24"><h2 class="about-closing-line">WHAT STARTED<br>WITH ONE...</h2><h2 class="about-closing-line mt-4 text-[#8c7b6d] md:mt-8">...BECAME SOMETHING<br>WE ALL BUILT.</h2></div><div class="mt-16 grid gap-12 md:grid-cols-12"><div class="md:col-span-6"><div class="max-w-xl space-y-5 text-base leading-relaxed text-stone-400 md:text-lg"><p>From a name created from two parts of one man's name, Abog has grown into a story shared by many.</p><p>36 years of making. 36 years of learning. 36 years of people, spaces and memories.</p><p>And after all this time, one thing hasn't changed:</p><p class="font-semibold text-stone-100">We still believe in making things worth keeping.</p></div></div><div class="flex flex-col justify-end md:col-span-5 md:col-start-8"><p class="font-display text-7xl font-black leading-none tracking-tighter md:text-9xl">ABOG</p><p class="mt-5 text-sm font-semibold uppercase tracking-[.2em] text-[#8c7b6d]">Since 1990.</p><p class="mt-3 max-w-xs text-sm leading-relaxed text-stone-400">Made with experience.<br>Built for what comes next.</p><a href="{{ url('/#projects-section') }}" class="mt-10 inline-flex w-fit items-center gap-5 rounded-full bg-[#8c7b6d] py-3 pl-6 pr-3 text-sm font-medium transition-colors hover:bg-[#9c8c7d]">See our work <span class="flex h-7 w-7 items-center justify-center rounded-full bg-white text-lg text-[#8c7b6d]">&rsaquo;</span></a></div></div></div></section>
-</article>
-<x-footer />
+    <x-footer />
 @endsection

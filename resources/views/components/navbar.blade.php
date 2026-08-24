@@ -1,6 +1,6 @@
 <header class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-6 flex justify-between items-center bg-transparent pointer-events-none transition-colors duration-500" id="main-header">
     <!-- Top Left Header Brand Logo (Always Visible) -->
-    <a href="#hero-section" class="pointer-events-auto flex items-center gap-2 group focus:outline-none" aria-label="ABog Home">
+    <a href="{{ route('home') }}" class="pointer-events-auto flex items-center gap-2 group focus:outline-none" aria-label="ABog Home">
         <span class="font-display font-black text-2xl md:text-3xl tracking-tighter transition-colors duration-500 text-white" id="header-logo-text">
             ABOG
         </span>
@@ -8,25 +8,43 @@
 
     <!-- Desktop Navigation Links (Center Align) -->
     <nav class="hidden md:flex items-center space-x-8 lg:space-x-10 text-sm font-medium tracking-wider font-sans pointer-events-auto" aria-label="Main Navigation" id="desktop-nav">
-        <a href="#hero-section" class="relative py-1 nav-link text-white transition-colors duration-300 group" aria-current="{{ request()->routeIs('about') ? 'false' : 'page' }}">
+        <!-- Home -->
+        <a href="{{ route('home') }}" 
+           class="relative py-1 nav-link transition-colors duration-300 group {{ request()->routeIs('home') ? 'text-[#8c7b6d] font-bold' : 'text-stone-400 hover:text-white' }}" 
+           aria-current="{{ request()->routeIs('home') ? 'page' : 'false' }}">
             Home
-            <span class="absolute bottom-0 left-0 w-full h-[1px] nav-line bg-white transition-transform duration-300 origin-left"></span>
+            <span class="absolute bottom-0 left-0 w-full h-[2px] nav-line bg-[#8c7b6d] transition-transform duration-300 origin-left {{ request()->routeIs('home') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100' }}"></span>
         </a>
-        <a href="{{ route('about') }}" class="relative py-1 nav-link text-stone-400 hover:text-white transition-colors duration-300 group" aria-current="{{ request()->routeIs('about') ? 'page' : 'false' }}">
+
+        <!-- About -->
+        <a href="{{ request()->routeIs('home') ? route('home').'#about-section' : route('about') }}" 
+           class="relative py-1 nav-link transition-colors duration-300 group {{ request()->routeIs('about') ? 'text-[#8c7b6d] font-bold' : 'text-stone-400 hover:text-white' }}" 
+           aria-current="{{ request()->routeIs('about') ? 'page' : 'false' }}">
             About
-            <span class="absolute bottom-0 left-0 w-full h-[1px] nav-line bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span class="absolute bottom-0 left-0 w-full h-[2px] nav-line bg-[#8c7b6d] transition-transform duration-300 origin-left {{ request()->routeIs('about') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100' }}"></span>
         </a>
-        <a href="#heritage-section" class="relative py-1 nav-link text-stone-400 hover:text-white transition-colors duration-300 group">
+
+        <!-- Processes -->
+        <a href="{{ route('process') }}" 
+           class="relative py-1 nav-link transition-colors duration-300 group {{ request()->routeIs('process') ? 'text-[#8c7b6d] font-bold' : 'text-stone-400 hover:text-white' }}" 
+           aria-current="{{ request()->routeIs('process') ? 'page' : 'false' }}">
             Processes
-            <span class="absolute bottom-0 left-0 w-full h-[1px] nav-line bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span class="absolute bottom-0 left-0 w-full h-[2px] nav-line bg-[#8c7b6d] transition-transform duration-300 origin-left {{ request()->routeIs('process') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100' }}"></span>
         </a>
-        <a href="#collections-section" class="relative py-1 nav-link text-stone-400 hover:text-white transition-colors duration-300 group">
+
+        <!-- Collections -->
+        <a href="{{ route('collections') }}" 
+           class="relative py-1 nav-link transition-colors duration-300 group {{ request()->routeIs('collections*') ? 'text-[#8c7b6d] font-bold' : 'text-stone-400 hover:text-white' }}" 
+           aria-current="{{ request()->routeIs('collections*') ? 'page' : 'false' }}">
             Collections
-            <span class="absolute bottom-0 left-0 w-full h-[1px] nav-line bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span class="absolute bottom-0 left-0 w-full h-[2px] nav-line bg-[#8c7b6d] transition-transform duration-300 origin-left {{ request()->routeIs('collections*') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100' }}"></span>
         </a>
-        <a href="#projects-section" class="relative py-1 nav-link text-stone-400 hover:text-white transition-colors duration-300 group">
+
+        <!-- Projects -->
+        <a href="{{ route('home') }}#projects-section" 
+           class="relative py-1 nav-link transition-colors duration-300 group text-stone-400 hover:text-white">
             Projects
-            <span class="absolute bottom-0 left-0 w-full h-[1px] nav-line bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span class="absolute bottom-0 left-0 w-full h-[2px] nav-line bg-[#8c7b6d] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
         </a>
     </nav>
 
@@ -53,19 +71,19 @@
     <div id="mobile-overlay" class="fixed inset-0 w-full h-screen bg-stone-950/98 backdrop-blur-xl z-40 flex flex-col justify-center px-8 translate-y-[-100%] opacity-0 pointer-events-none" aria-hidden="true">
         <nav class="flex flex-col space-y-6 font-display text-4xl font-light tracking-wide relative z-10" aria-label="Mobile Navigation">
             <div class="mobile-nav-item overflow-hidden">
-                <a href="#hero-section" class="block text-white py-2 focus:underline" aria-current="{{ request()->routeIs('about') ? 'false' : 'page' }}">Home</a>
+                <a href="{{ route('home') }}" class="block py-2 focus:underline {{ request()->routeIs('home') ? 'text-[#8c7b6d] font-bold' : 'text-white' }}" aria-current="{{ request()->routeIs('home') ? 'page' : 'false' }}">Home</a>
             </div>
             <div class="mobile-nav-item overflow-hidden">
-                <a href="{{ route('about') }}" class="block text-stone-400 hover:text-white py-2 focus:underline">About</a>
+                <a href="{{ route('about') }}" class="block py-2 focus:underline {{ request()->routeIs('about') ? 'text-[#8c7b6d] font-bold' : 'text-stone-400 hover:text-white' }}" aria-current="{{ request()->routeIs('about') ? 'page' : 'false' }}">About</a>
             </div>
             <div class="mobile-nav-item overflow-hidden">
-                <a href="#heritage-section" class="block text-stone-400 hover:text-white py-2 focus:underline">Processes</a>
+                <a href="{{ route('process') }}" class="block py-2 focus:underline {{ request()->routeIs('process') ? 'text-[#8c7b6d] font-bold' : 'text-stone-400 hover:text-white' }}" aria-current="{{ request()->routeIs('process') ? 'page' : 'false' }}">Processes</a>
             </div>
             <div class="mobile-nav-item overflow-hidden">
-                <a href="#collections-section" class="block text-stone-400 hover:text-white py-2 focus:underline">Collections</a>
+                <a href="{{ route('collections') }}" class="block py-2 focus:underline {{ request()->routeIs('collections*') ? 'text-[#8c7b6d] font-bold' : 'text-stone-400 hover:text-white' }}" aria-current="{{ request()->routeIs('collections*') ? 'page' : 'false' }}">Collections</a>
             </div>
             <div class="mobile-nav-item overflow-hidden">
-                <a href="#projects-section" class="block text-stone-400 hover:text-white py-2 focus:underline">Projects</a>
+                <a href="{{ route('home') }}#projects-section" class="block text-stone-400 hover:text-white py-2 focus:underline">Projects</a>
             </div>
             
             <div class="mobile-nav-item overflow-hidden pt-6">

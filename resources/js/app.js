@@ -5,6 +5,7 @@ import { initCollections } from './animations/collections';
 import { initProjects } from './animations/projects';
 import { initExperience } from './animations/experience';
 import { initAbout } from './animations/about';
+import { initProcess } from './animations/process';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjects();
     initExperience();
     initAbout();
+    initProcess();
 });
 
 

@@ -102,16 +102,12 @@ export function initNavigation() {
             if (logoText) logoText.className = 'font-display font-black text-2xl md:text-3xl tracking-tighter transition-colors duration-500 text-stone-900';
             navLinks.forEach(l => {
                 if (l.getAttribute('aria-current') === 'page') {
-                    l.classList.remove('text-white', 'text-stone-400');
-                    l.classList.add('text-stone-900');
+                    l.classList.remove('text-white', 'text-stone-400', 'text-stone-600');
+                    l.classList.add('text-[#8c7b6d]', 'font-bold');
                 } else {
                     l.classList.remove('text-white');
                     l.classList.add('text-stone-600', 'hover:text-stone-900');
                 }
-            });
-            navLines.forEach(line => {
-                line.classList.remove('bg-white');
-                line.classList.add('bg-stone-900');
             });
             hamburgerLines.forEach(hb => {
                 hb.classList.remove('bg-white');
@@ -121,21 +117,45 @@ export function initNavigation() {
             if (logoText) logoText.className = 'font-display font-black text-2xl md:text-3xl tracking-tighter transition-colors duration-500 text-white';
             navLinks.forEach(l => {
                 if (l.getAttribute('aria-current') === 'page') {
-                    l.classList.remove('text-stone-900', 'text-stone-600');
-                    l.classList.add('text-white');
+                    l.classList.remove('text-stone-900', 'text-stone-600', 'text-stone-400');
+                    l.classList.add('text-[#8c7b6d]', 'font-bold');
                 } else {
                     l.classList.remove('text-stone-900', 'text-stone-600');
                     l.classList.add('text-stone-400', 'hover:text-white');
                 }
-            });
-            navLines.forEach(line => {
-                line.classList.remove('bg-stone-900');
-                line.classList.add('bg-white');
             });
             hamburgerLines.forEach(hb => {
                 hb.classList.remove('bg-stone-900');
                 hb.classList.add('bg-white');
             });
         }
+    }
+
+    // Highlight nav links when their page sections are in view (for anchored home sections)
+    const desktopNavLinks = Array.from(document.querySelectorAll('#desktop-nav a'));
+    const anchoredSections = Array.from(document.querySelectorAll('section[id]'));
+
+    anchoredSections.forEach(section => {
+        ScrollTrigger.create({
+            trigger: section,
+            start: 'top 80px',
+            end: 'bottom 80px',
+            onEnter: () => setActiveForSection(section.id),
+            onEnterBack: () => setActiveForSection(section.id),
+        });
+    });
+
+    function setActiveForSection(sectionId) {
+        desktopNavLinks.forEach(link => {
+            const href = link.getAttribute('href') || '';
+            if (href.includes('#' + sectionId)) {
+                link.setAttribute('aria-current', 'page');
+            } else {
+                // preserve explicit page-level aria-current (routes)
+                if (!link.href || !link.href.includes(window.location.pathname)) {
+                    link.setAttribute('aria-current', 'false');
+                }
+            }
+        });
     }
 }
