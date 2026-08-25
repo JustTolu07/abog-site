@@ -73,7 +73,7 @@ export function initProjects() {
                 scrollTrigger: {
                     trigger: item,
                     start: 'top 80%',
-                    toggleActions: 'play none none reverse'
+                    toggleActions: 'play none none none'
                 },
                 y: 30,
                 opacity: 0,
@@ -87,7 +87,7 @@ export function initProjects() {
                 scrollTrigger: {
                     trigger: item,
                     start: 'top 70%',
-                    toggleActions: 'play none none reverse'
+                    toggleActions: 'play none none none'
                 },
                 y: 50,
                 opacity: 0,

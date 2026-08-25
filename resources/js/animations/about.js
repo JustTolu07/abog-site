@@ -4,6 +4,56 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export function initAbout() {
+    // 1. Homepage Pinned About Word-by-Word Scroll Reveal
+    const aboutPinTrigger = document.querySelector('#about-pin-trigger');
+    const aboutSection = document.querySelector('#about-section');
+    const aboutWords = document.querySelectorAll('#about-text .about-word');
+    const aboutBtnContainer = document.querySelector('#about-btn-container');
+
+    if (aboutSection && aboutWords.length) {
+        const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (isReduced) {
+            gsap.set(aboutWords, { opacity: 1, color: '#1c1917' });
+            if (aboutBtnContainer) gsap.set(aboutBtnContainer, { opacity: 1, y: 0 });
+        } else {
+            // Initial state: Words faded
+            gsap.set(aboutWords, { opacity: 0.25, color: '#a8a29e' });
+            if (aboutBtnContainer) gsap.set(aboutBtnContainer, { opacity: 0, y: 20 });
+
+            const triggerEl = aboutPinTrigger || aboutSection;
+
+            const aboutTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: triggerEl,
+                    start: 'top top',
+                    end: 'bottom bottom',
+                    scrub: 1.0,
+                    invalidateOnRefresh: true
+                }
+            });
+
+            // Reveal words one by one as user scrolls
+            aboutTl.to(aboutWords, {
+                opacity: 1,
+                color: '#1c1917',
+                stagger: 0.12,
+                ease: 'power1.out',
+                duration: 3
+            }, 0);
+
+            // Animate learn more button near end of reveal
+            if (aboutBtnContainer) {
+                aboutTl.to(aboutBtnContainer, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out'
+                }, 2.8);
+            }
+        }
+    }
+
+    // 2. Dedicated About Page (if present)
     const page = document.querySelector('[data-about-page]');
     if (!page) return;
 

@@ -49,295 +49,341 @@
     <div id="process-story-section" data-header-theme="light" class="py-24 px-6 md:px-16 lg:px-24 max-w-7xl mx-auto w-full">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
-            <!-- STICKY SIDEBAR NAVIGATION (Desktop) -->
-            <div class="lg:col-span-4 sticky top-28 z-20 bg-[#f5f3ef]/90 backdrop-blur-md py-4 rounded-xl">
-                <div class="mb-6 pb-4 border-b border-stone-300">
-                    <span class="text-xs font-mono text-stone-500 uppercase tracking-widest">Journey Navigation</span>
-                    <h3 class="font-display font-bold text-2xl text-stone-900">Six Stages of Craft</h3>
+            <!-- LEFT COLUMN: Interactive Stage Navigation -->
+            <div class="lg:col-span-5 flex flex-col justify-start pt-4">
+                <div class="mb-8 pb-4 border-b border-stone-300/60">
+                    <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-widest block mb-2">Journey Navigation</span>
+                    <h2 class="font-display font-black text-3xl md:text-5xl text-stone-900 tracking-tight">Six Stages of Craft</h2>
                 </div>
 
                 <nav class="process-nav">
-                    <ul class="flex flex-col gap-3">
-                        <li class="process-nav-item active" data-step="understand" data-description="Before we make, we listen. Every detail begins in dialogue.">
-                            <button class="process-nav-btn text-left w-full px-4 py-3 rounded-lg border border-transparent transition-all duration-300 flex items-center justify-between group">
-                                <span class="font-display font-bold text-lg md:text-xl">01 — Understand</span>
-                                <span class="w-2 h-2 rounded-full bg-[#8c7b6d] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    <ul class="flex flex-col process-nav-list">
+                        <!-- Understand -->
+                        <li class="process-nav-item active" data-stage="understand">
+                            <button type="button" class="process-nav-btn focus:outline-none w-full text-left" aria-pressed="true">
+                                <span class="process-nav-num">01</span>
+                                <span class="process-nav-title">Understand</span>
                             </button>
+                            <div class="process-nav-desc-wrapper overflow-hidden">
+                                <p class="process-nav-desc text-stone-600 text-sm md:text-base leading-relaxed pt-3 pb-1 pl-8 pr-4">
+                                    Before we make, we listen. Every detail begins in dialogue. We transform brief conversations into spatial possibilities and architectural clarity.
+                                </p>
+                            </div>
                         </li>
-                        <li class="process-nav-item" data-step="design" data-description="Ideas need a form. Sketches become architectural precision.">
-                            <button class="process-nav-btn text-left w-full px-4 py-3 rounded-lg border border-transparent transition-all duration-300 flex items-center justify-between group">
-                                <span class="font-display font-bold text-lg md:text-xl">02 — Design</span>
-                                <span class="w-2 h-2 rounded-full bg-[#8c7b6d] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+
+                        <!-- Design -->
+                        <li class="process-nav-item" data-stage="design">
+                            <button type="button" class="process-nav-btn focus:outline-none w-full text-left" aria-pressed="false">
+                                <span class="process-nav-num">02</span>
+                                <span class="process-nav-title">Design</span>
                             </button>
+                            <div class="process-nav-desc-wrapper overflow-hidden h-0 opacity-0">
+                                <p class="process-nav-desc text-stone-600 text-sm md:text-base leading-relaxed pt-3 pb-1 pl-8 pr-4">
+                                    Ideas need a form. Sketches become architectural precision. We balance visual poise with load-bearing structural integrity.
+                                </p>
+                            </div>
                         </li>
-                        <li class="process-nav-item" data-step="material" data-description="What it's made of matters. Connecting to our Grid & Grain philosophy.">
-                            <button class="process-nav-btn text-left w-full px-4 py-3 rounded-lg border border-transparent transition-all duration-300 flex items-center justify-between group">
-                                <span class="font-display font-bold text-lg md:text-xl">03 — Material</span>
-                                <span class="w-2 h-2 rounded-full bg-[#8c7b6d] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+
+                        <!-- Material -->
+                        <li class="process-nav-item" data-stage="material">
+                            <button type="button" class="process-nav-btn focus:outline-none w-full text-left" aria-pressed="false">
+                                <span class="process-nav-num">03</span>
+                                <span class="process-nav-title">Material</span>
                             </button>
+                            <div class="process-nav-desc-wrapper overflow-hidden h-0 opacity-0">
+                                <p class="process-nav-desc text-stone-600 text-sm md:text-base leading-relaxed pt-3 pb-1 pl-8 pr-4">
+                                    What it's made of matters. Connecting to our Grid & Grain philosophy. African Teak, walnut, burnished solid brass, and rich textures.
+                                </p>
+                            </div>
                         </li>
-                        <li class="process-nav-item" data-step="make" data-description="This is where the idea gets hands. Raw wood meets human skill.">
-                            <button class="process-nav-btn text-left w-full px-4 py-3 rounded-lg border border-transparent transition-all duration-300 flex items-center justify-between group">
-                                <span class="font-display font-bold text-lg md:text-xl">04 — Make</span>
-                                <span class="w-2 h-2 rounded-full bg-[#8c7b6d] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+
+                        <!-- Make -->
+                        <li class="process-nav-item" data-stage="make">
+                            <button type="button" class="process-nav-btn focus:outline-none w-full text-left" aria-pressed="false">
+                                <span class="process-nav-num">04</span>
+                                <span class="process-nav-title">Make</span>
                             </button>
+                            <div class="process-nav-desc-wrapper overflow-hidden h-0 opacity-0">
+                                <p class="process-nav-desc text-stone-600 text-sm md:text-base leading-relaxed pt-3 pb-1 pl-8 pr-4">
+                                    This is where the idea gets hands. Decades of Nigerian woodworking expertise, hand chisels, and precision machinery merge.
+                                </p>
+                            </div>
                         </li>
-                        <li class="process-nav-item" data-step="refine" data-description="Good enough isn't the finish line. Hand-sanding and micro detail checks.">
-                            <button class="process-nav-btn text-left w-full px-4 py-3 rounded-lg border border-transparent transition-all duration-300 flex items-center justify-between group">
-                                <span class="font-display font-bold text-lg md:text-xl">05 — Refine</span>
-                                <span class="w-2 h-2 rounded-full bg-[#8c7b6d] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+
+                        <!-- Refine -->
+                        <li class="process-nav-item" data-stage="refine">
+                            <button type="button" class="process-nav-btn focus:outline-none w-full text-left" aria-pressed="false">
+                                <span class="process-nav-num">05</span>
+                                <span class="process-nav-title">Refine</span>
                             </button>
+                            <div class="process-nav-desc-wrapper overflow-hidden h-0 opacity-0">
+                                <p class="process-nav-desc text-stone-600 text-sm md:text-base leading-relaxed pt-3 pb-1 pl-8 pr-4">
+                                    Good enough isn't the finish line. We hand-sand, hand-oil, inspect grain alignment, and perfect every subtle radius.
+                                </p>
+                            </div>
                         </li>
-                        <li class="process-nav-item" data-step="deliver" data-description="A piece isn't finished until it's where it belongs. Placement in space.">
-                            <button class="process-nav-btn text-left w-full px-4 py-3 rounded-lg border border-transparent transition-all duration-300 flex items-center justify-between group">
-                                <span class="font-display font-bold text-lg md:text-xl">06 — Deliver</span>
-                                <span class="w-2 h-2 rounded-full bg-[#8c7b6d] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+
+                        <!-- Deliver -->
+                        <li class="process-nav-item" data-stage="deliver">
+                            <button type="button" class="process-nav-btn focus:outline-none w-full text-left" aria-pressed="false">
+                                <span class="process-nav-num">06</span>
+                                <span class="process-nav-title">Deliver</span>
                             </button>
+                            <div class="process-nav-desc-wrapper overflow-hidden h-0 opacity-0">
+                                <p class="process-nav-desc text-stone-600 text-sm md:text-base leading-relaxed pt-3 pb-1 pl-8 pr-4">
+                                    A piece isn't finished until it's where it belongs. White-glove transport, spatial positioning, and precise installation.
+                                </p>
+                            </div>
                         </li>
                     </ul>
                 </nav>
-
-                <div class="mt-8 p-5 bg-stone-200/70 border border-stone-300 rounded-xl">
-                    <span class="text-xs font-mono text-[#8c7b6d] uppercase tracking-wider block mb-1">Focus Principle</span>
-                    <p id="process-step-description" class="text-stone-700 font-sans text-sm leading-snug">
-                        Before we make, we listen. Every detail begins in dialogue.
-                    </p>
-                </div>
             </div>
 
-            <!-- RIGHT VISUAL STAGES SHOWCASE -->
-            <div class="lg:col-span-8 space-y-20" id="process-stages-container">
-
+            <!-- RIGHT COLUMN: Stacked Stage Cards -->
+            <div class="lg:col-span-7 grid grid-cols-1 grid-rows-1 w-full" id="process-cards-container">
+                
                 <!-- 01 UNDERSTAND -->
-                <div class="process-stage-block rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm transition-all duration-500 hover:shadow-xl" data-stage="understand">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">01 / DISCOVERY</span>
-                        <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase One</span>
-                    </div>
-
-                    <div class="relative overflow-hidden rounded-xl mb-8 group">
-                        <img src="{{ asset('assets/process/01-understand.png') }}" 
-                             alt="Understand - Client Consultation & Spatial Briefing" 
-                             class="w-full h-[360px] md:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" />
-                        <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
-                            Spatial Analysis & Brief
+                <div class="process-stage-card col-start-1 row-start-1 w-full opacity-100 pointer-events-auto z-10" data-stage-card="understand">
+                    <div class="rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm hover:shadow-xl transition-shadow duration-500">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">01 / DISCOVERY</span>
+                            <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase One</span>
                         </div>
-                    </div>
 
-                    <h3 class="font-display font-extrabold text-3xl md:text-4xl text-stone-900 tracking-tight">
-                        BEFORE WE MAKE, WE LISTEN.
-                    </h3>
-                    <p class="text-stone-600 text-base md:text-lg mt-4 leading-relaxed">
-                        Every project begins with understanding the people, space, purpose, and ergonomic requirements behind it. We transform brief conversations into spatial possibilities and architectural clarity.
-                    </p>
+                        <div class="relative overflow-hidden rounded-xl mb-8 group">
+                            <img src="{{ asset('assets/process/01-understand.png') }}" 
+                                 alt="Understand - Client Consultation & Spatial Briefing" 
+                                 class="w-full h-[320px] md:h-[420px] object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
+                                Spatial Analysis & Brief
+                            </div>
+                        </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">INPUT</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">Architectural Brief</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">METHOD</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">Spatial Analysis</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
-                            <span class="font-display font-semibold text-sm text-[#8c7b6d]">Design Intent</span>
+                        <h3 class="font-display font-extrabold text-2xl md:text-3xl text-stone-900 tracking-tight uppercase">
+                            BEFORE WE MAKE, WE LISTEN.
+                        </h3>
+                        <p class="text-stone-600 text-base mt-4 leading-relaxed">
+                            Every project begins with understanding the people, space, purpose, and ergonomic requirements behind it. We transform brief conversations into spatial possibilities and architectural clarity.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">INPUT</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">Architectural Brief</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">METHOD</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">Spatial Analysis</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-[#8c7b6d]">Design Intent</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 02 DESIGN -->
-                <div class="process-stage-block rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm transition-all duration-500 hover:shadow-xl" data-stage="design">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">02 / ARCHITECTURE</span>
-                        <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase Two</span>
-                    </div>
-
-                    <div class="relative overflow-hidden rounded-xl mb-8 group">
-                        <img src="{{ asset('assets/process/02-design.png') }}" 
-                             alt="Design - Architectural Drawings & Drafting" 
-                             class="w-full h-[360px] md:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" />
-                        <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
-                            Drafting & Millimeter Scale
+                <div class="process-stage-card col-start-1 row-start-1 w-full opacity-0 pointer-events-none z-0" data-stage-card="design">
+                    <div class="rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm hover:shadow-xl transition-shadow duration-500">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">02 / ARCHITECTURE</span>
+                            <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase Two</span>
                         </div>
-                    </div>
 
-                    <h3 class="font-display font-extrabold text-3xl md:text-4xl text-stone-900 tracking-tight">
-                        IDEAS NEED A FORM.
-                    </h3>
-                    <p class="text-stone-600 text-base md:text-lg mt-4 leading-relaxed">
-                        Sketches, proportions, millimeter technical drawings, and structural CAD systems define the shape of an idea. We balance visual poise with load-bearing structural integrity.
-                    </p>
+                        <div class="relative overflow-hidden rounded-xl mb-8 group">
+                            <img src="{{ asset('assets/process/02-design.png') }}" 
+                                 alt="Design - Architectural Drawings & Drafting" 
+                                 class="w-full h-[320px] md:h-[420px] object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
+                                Drafting & Millimeter Scale
+                            </div>
+                        </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">TOOLING</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">CAD & Hand Sketches</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">PRECISION</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">&plusmn;0.5mm Tolerance</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
-                            <span class="font-display font-semibold text-sm text-[#8c7b6d]">Working Blueprint</span>
+                        <h3 class="font-display font-extrabold text-2xl md:text-3xl text-stone-900 tracking-tight uppercase">
+                            IDEAS NEED A FORM.
+                        </h3>
+                        <p class="text-stone-600 text-base mt-4 leading-relaxed">
+                            Sketches, proportions, millimeter technical drawings, and structural CAD systems define the shape of an idea. We balance visual poise with load-bearing structural integrity.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">TOOLING</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">CAD & Hand Sketches</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">PRECISION</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">&plusmn;0.5mm Tolerance</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-[#8c7b6d]">Working Blueprint</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 03 MATERIAL -->
-                <div class="process-stage-block rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm transition-all duration-500 hover:shadow-xl" data-stage="material">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">03 / SUBSTANCE</span>
-                        <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase Three</span>
-                    </div>
-
-                    <div class="relative overflow-hidden rounded-xl mb-8 group">
-                        <img src="{{ asset('assets/process/03-material.png') }}" 
-                             alt="Material - Hardwoods, Metals & Textiles" 
-                             class="w-full h-[360px] md:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" />
-                        <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
-                            Grid & Grain Philosophy
+                <div class="process-stage-card col-start-1 row-start-1 w-full opacity-0 pointer-events-none z-0" data-stage-card="material">
+                    <div class="rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm hover:shadow-xl transition-shadow duration-500">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">03 / SUBSTANCE</span>
+                            <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase Three</span>
                         </div>
-                    </div>
 
-                    <h3 class="font-display font-extrabold text-3xl md:text-4xl text-stone-900 tracking-tight">
-                        WHAT IT'S MADE OF MATTERS.
-                    </h3>
-                    <p class="text-stone-600 text-base md:text-lg mt-4 leading-relaxed">
-                        Materials determine not only how something looks, but how it endures, patinates, and feels to human touch. Wood, brass, leather, and natural stone connect directly back to Abog's <strong class="text-stone-900">Grid & Grain</strong> philosophy.
-                    </p>
+                        <div class="relative overflow-hidden rounded-xl mb-8 group">
+                            <img src="{{ asset('assets/process/03-material.png') }}" 
+                                 alt="Material - Hardwoods, Metals & Textiles" 
+                                 class="w-full h-[320px] md:h-[420px] object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
+                                Grid & Grain Philosophy
+                            </div>
+                        </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">SPECIES</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">African Teak & Walnut</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">ACCENTS</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">Brushed Solid Brass</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
-                            <span class="font-display font-semibold text-sm text-[#8c7b6d]">Organic Tactility</span>
+                        <h3 class="font-display font-extrabold text-2xl md:text-3xl text-stone-900 tracking-tight uppercase">
+                            WHAT IT'S MADE OF MATTERS.
+                        </h3>
+                        <p class="text-stone-600 text-base mt-4 leading-relaxed">
+                            Materials determine not only how something looks, but how it endures, patinates, and feels to human touch. Wood, brass, leather, and natural stone connect directly back to Abog's Grid & Grain philosophy.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">SPECIES</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">African Teak & Walnut</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">ACCENTS</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">Solid Brass</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-[#8c7b6d]">Organic Tactility</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 04 MAKE -->
-                <div class="process-stage-block rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm transition-all duration-500 hover:shadow-xl" data-stage="make">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">04 / CRAFTSMANSHIP</span>
-                        <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase Four</span>
-                    </div>
-
-                    <div class="relative overflow-hidden rounded-xl mb-8 group">
-                        <img src="{{ asset('assets/process/04-make.png') }}" 
-                             alt="Make - Artisan Woodworking Craftsman" 
-                             class="w-full h-[360px] md:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" />
-                        <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
-                            Hand Joinery & Atelier
+                <div class="process-stage-card col-start-1 row-start-1 w-full opacity-0 pointer-events-none z-0" data-stage-card="make">
+                    <div class="rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm hover:shadow-xl transition-shadow duration-500">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">04 / CRAFTSMANSHIP</span>
+                            <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase Four</span>
                         </div>
-                    </div>
 
-                    <h3 class="font-display font-extrabold text-3xl md:text-4xl text-stone-900 tracking-tight">
-                        THIS IS WHERE THE IDEA GETS HANDS.
-                    </h3>
-                    <p class="text-stone-600 text-base md:text-lg mt-4 leading-relaxed">
-                        Cutting, shaping, joining, and assembling. This is where decades of Nigerian woodworking expertise, hand chisels, and precision machinery merge to transform raw lumber into structural art.
-                    </p>
+                        <div class="relative overflow-hidden rounded-xl mb-8 group">
+                            <img src="{{ asset('assets/process/04-make.png') }}" 
+                                 alt="Make - Artisan Woodworking Craftsman" 
+                                 class="w-full h-[320px] md:h-[420px] object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
+                                Hand Joinery & Atelier
+                            </div>
+                        </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">JOINERY</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">Mortise & Tenon</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">TECHNIQUE</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">Hand Planing & CNC</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
-                            <span class="font-display font-semibold text-sm text-[#8c7b6d]">Solid Form</span>
+                        <h3 class="font-display font-extrabold text-2xl md:text-3xl text-stone-900 tracking-tight uppercase">
+                            THE IDEA GETS HANDS.
+                        </h3>
+                        <p class="text-stone-600 text-base mt-4 leading-relaxed">
+                            Cutting, shaping, joining, and assembling. This is where decades of Nigerian woodworking expertise, hand chisels, and precision machinery merge to transform raw lumber into structural art.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">JOINERY</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">Mortise & Tenon</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">TECHNIQUE</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">Hand Planing & CNC</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-[#8c7b6d]">Solid Form</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 05 REFINE -->
-                <div class="process-stage-block rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm transition-all duration-500 hover:shadow-xl" data-stage="refine">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">05 / PRECISION</span>
-                        <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase Five</span>
-                    </div>
-
-                    <div class="relative overflow-hidden rounded-xl mb-8 group">
-                        <img src="{{ asset('assets/process/05-refine.png') }}" 
-                             alt="Refine - Micro Detail Sanding & Finishing" 
-                             class="w-full h-[360px] md:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" />
-                        <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
-                            Macro Finishing
+                <div class="process-stage-card col-start-1 row-start-1 w-full opacity-0 pointer-events-none z-0" data-stage-card="refine">
+                    <div class="rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm hover:shadow-xl transition-shadow duration-500">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">05 / PRECISION</span>
+                            <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase Five</span>
                         </div>
-                    </div>
 
-                    <h3 class="font-display font-extrabold text-3xl md:text-4xl text-stone-900 tracking-tight">
-                        GOOD ENOUGH ISN'T THE FINISH LINE.
-                    </h3>
-                    <p class="text-stone-600 text-base md:text-lg mt-4 leading-relaxed">
-                        Precision lives in the smallest decisions. We hand-sand, hand-oil, inspect grain alignment, and perfect every subtle radius until the piece feels flawless to human touch.
-                    </p>
+                        <div class="relative overflow-hidden rounded-xl mb-8 group">
+                            <img src="{{ asset('assets/process/05-refine.png') }}" 
+                                 alt="Refine - Micro Detail Sanding & Finishing" 
+                                 class="w-full h-[320px] md:h-[420px] object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
+                                Macro Finishing
+                            </div>
+                        </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">FINISH</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">Natural Hardwax Oils</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">SANDING</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">Ultra-Fine 400 Grit</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
-                            <span class="font-display font-semibold text-sm text-[#8c7b6d]">Tactile Perfection</span>
+                        <h3 class="font-display font-extrabold text-2xl md:text-3xl text-stone-900 tracking-tight uppercase">
+                            GOOD ENOUGH ISN'T FINISHED.
+                        </h3>
+                        <p class="text-stone-600 text-base mt-4 leading-relaxed">
+                            Precision lives in the smallest decisions. We hand-sand, hand-oil, inspect grain alignment, and perfect every subtle radius until the piece feels flawless to human touch.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">FINISH</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">Hardwax Oils</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">SANDING</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">Ultra-Fine 400 Grit</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-[#8c7b6d]">Tactile Perfection</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 06 DELIVER -->
-                <div class="process-stage-block rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm transition-all duration-500 hover:shadow-xl" data-stage="deliver">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">06 / COMPLETION</span>
-                        <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase Six</span>
-                    </div>
-
-                    <div class="relative overflow-hidden rounded-xl mb-8 group">
-                        <img src="{{ asset('assets/process/06-deliver.jpg') }}" 
-                             alt="Deliver - Installation in Modern Residence" 
-                             class="w-full h-[360px] md:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" />
-                        <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
-                            White-Glove Installation
+                <div class="process-stage-card col-start-1 row-start-1 w-full opacity-0 pointer-events-none z-0" data-stage-card="deliver">
+                    <div class="rounded-2xl bg-white border border-stone-200 p-6 md:p-10 shadow-sm hover:shadow-xl transition-shadow duration-500">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-[#8c7b6d] font-mono font-bold text-sm tracking-widest uppercase">06 / COMPLETION</span>
+                            <span class="text-xs font-sans px-3 py-1 bg-stone-100 text-stone-600 rounded-full font-medium">Phase Six</span>
                         </div>
-                    </div>
 
-                    <h3 class="font-display font-extrabold text-3xl md:text-4xl text-stone-900 tracking-tight">
-                        A PIECE ISN'T FINISHED UNTIL IT'S WHERE IT BELONGS.
-                    </h3>
-                    <p class="text-stone-600 text-base md:text-lg mt-4 leading-relaxed">
-                        From workshop to client sanctuary: white-glove transport, spatial positioning, and precise installation complete the creative arc.
-                    </p>
+                        <div class="relative overflow-hidden rounded-xl mb-8 group">
+                            <img src="{{ asset('assets/process/06-deliver.jpg') }}" 
+                                 alt="Deliver - Installation in Modern Residence" 
+                                 class="w-full h-[320px] md:h-[420px] object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div class="absolute bottom-4 right-4 bg-stone-950/80 backdrop-blur-md text-white text-xs font-mono px-3 py-1.5 rounded-md">
+                                White-Glove Installation
+                            </div>
+                        </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">LOGISTICS</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">White-Glove Transport</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">PLACEMENT</span>
-                            <span class="font-display font-semibold text-sm text-stone-800">Architectural Alignment</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
-                            <span class="font-display font-semibold text-sm text-[#8c7b6d]">Living Space</span>
+                        <h3 class="font-display font-extrabold text-2xl md:text-3xl text-stone-900 tracking-tight uppercase">
+                            PLACEMENT IN SPACE.
+                        </h3>
+                        <p class="text-stone-600 text-base mt-4 leading-relaxed">
+                            From workshop to client sanctuary: white-glove transport, spatial positioning, and precise installation complete the creative arc.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-100">
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">LOGISTICS</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">White-Glove Transport</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">PLACEMENT</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-stone-800">Spatial Alignment</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-mono text-stone-400">OUTCOME</span>
+                                <span class="font-display font-semibold text-xs md:text-sm text-[#8c7b6d]">Living Space</span>
+                            </div>
                         </div>
                     </div>
                 </div>

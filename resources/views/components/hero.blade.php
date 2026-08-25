@@ -1,4 +1,4 @@
-<div id="hero-pin-trigger" class="relative h-[500vh] w-full">
+<div id="hero-pin-trigger" class="relative h-[250vh] w-full">
     <!-- Pinned Viewport Hero Content -->
     <section id="hero-section" class="sticky top-0 h-screen w-full bg-stone-950 overflow-hidden flex items-center select-none" aria-label="Welcome Hero">
         <!-- Background Image Container -->
@@ -46,6 +46,13 @@
             <p id="hero-subtext" class="text-stone-300 font-sans text-xs md:text-sm lg:text-base font-normal leading-relaxed tracking-wide will-change-[transform,opacity]">
                 Furniture and interior solutions for homes, workplaces and institutions.
             </p>
+        </div>
+
+        <!-- Bottom Giant ABOG Display Title (As seen in design attached) -->
+        <div id="hero-abog-watermark" class="absolute bottom-2 sm:bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none text-center w-full px-4 will-change-[transform,opacity]">
+            <h2 class="font-display font-black text-6xl sm:text-8xl md:text-9xl lg:text-[13rem] text-white tracking-tighter leading-none select-none opacity-95 drop-shadow-2xl">
+                ABOG
+            </h2>
         </div>
     </section>
 </div>

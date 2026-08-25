@@ -8,96 +8,127 @@ export function initProcess() {
     if (!processPage) return;
 
     const navItems = Array.from(document.querySelectorAll('.process-nav-item'));
-    const stageBlocks = Array.from(document.querySelectorAll('.process-stage-block'));
-    const stepDescription = document.getElementById('process-step-description');
+    const cards = Array.from(document.querySelectorAll('.process-stage-card'));
+
+    if (navItems.length === 0 || cards.length === 0) return;
 
     let activeStage = 'understand';
+    let isTransitioning = false;
 
     // 1. Stage Activation Function
-    function setActiveStage(stageKey) {
-        if (activeStage === stageKey && navItems.some(item => item.classList.contains('active'))) return;
-        activeStage = stageKey;
+    function handleStageSwitch(targetStage) {
+        if (targetStage === activeStage || isTransitioning) return;
+        isTransitioning = true;
+
+        const prevStage = activeStage;
+        activeStage = targetStage;
+
+        // Find active and target nav items/cards
+        const prevItem = navItems.find(item => item.getAttribute('data-stage') === prevStage);
+        const targetItem = navItems.find(item => item.getAttribute('data-stage') === targetStage);
+
+        const prevCard = cards.find(card => card.getAttribute('data-stage-card') === prevStage);
+        const targetCard = cards.find(card => card.getAttribute('data-stage-card') === targetStage);
+
+        // Update nav items active states immediately
+        if (prevItem) prevItem.classList.remove('active');
+        if (targetItem) targetItem.classList.add('active');
 
         navItems.forEach(item => {
             const btn = item.querySelector('.process-nav-btn');
-            const matches = item.getAttribute('data-step') === stageKey;
-            
-            if (matches) {
-                item.classList.add('active');
-                btn?.classList.add('bg-stone-200/80', 'border-stone-300', 'text-[#8c7b6d]');
-                btn?.classList.remove('border-transparent');
-                
-                const desc = item.getAttribute('data-description');
-                if (stepDescription && desc) {
-                    gsap.to(stepDescription, {
-                        opacity: 0,
-                        duration: 0.15,
-                        onComplete: () => {
-                            stepDescription.textContent = desc;
-                            gsap.to(stepDescription, { opacity: 1, duration: 0.25 });
-                        }
-                    });
-                }
-            } else {
-                item.classList.remove('active');
-                btn?.classList.remove('bg-stone-200/80', 'border-stone-300', 'text-[#8c7b6d]');
-                btn?.classList.add('border-transparent');
+            btn?.setAttribute('aria-pressed', item === targetItem ? 'true' : 'false');
+        });
+
+        // Get description wrappers
+        const prevWrapper = prevItem?.querySelector('.process-nav-desc-wrapper');
+        const targetWrapper = targetItem?.querySelector('.process-nav-desc-wrapper');
+
+        // Create transition timeline
+        const tl = gsap.timeline({
+            onComplete: () => {
+                isTransitioning = false;
             }
         });
+
+        // 1. Transition Navigation Accordion Description
+        if (prevWrapper) {
+            tl.to(prevWrapper, {
+                height: 0,
+                opacity: 0,
+                duration: 0.4,
+                ease: 'power3.inOut'
+            }, 0);
+        }
+
+        if (targetWrapper) {
+            tl.to(targetWrapper, {
+                height: 'auto',
+                opacity: 1,
+                duration: 0.4,
+                ease: 'power3.inOut'
+            }, 0);
+        }
+
+        // 2. Transition Right Column stacked Cards
+        if (prevCard) {
+            prevCard.classList.remove('pointer-events-auto', 'z-10');
+            prevCard.classList.add('pointer-events-none', 'z-0');
+
+            // Fade and scale/move out
+            tl.to(prevCard, {
+                opacity: 0,
+                scale: 0.96,
+                y: -12,
+                duration: 0.45,
+                ease: 'power3.inOut'
+            }, 0);
+        }
+
+        if (targetCard) {
+            targetCard.classList.remove('pointer-events-none', 'z-0');
+            targetCard.classList.add('pointer-events-auto', 'z-10');
+
+            // Set initial state for incoming card
+            gsap.set(targetCard, {
+                opacity: 0,
+                scale: 1.04,
+                y: 12
+            });
+
+            // Fade and scale/move in
+            tl.to(targetCard, {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                duration: 0.55,
+                ease: 'power3.out'
+            }, 0.1);
+
+            // Stagger animate inner children elements of the incoming card
+            const innerElements = targetCard.querySelectorAll('.rounded-2xl > *');
+            if (innerElements.length > 0) {
+                tl.fromTo(innerElements,
+                    { opacity: 0, y: 10 },
+                    { opacity: 1, y: 0, duration: 0.45, stagger: 0.08, ease: 'power2.out' },
+                    0.2
+                );
+            }
+        }
     }
 
-    // Initialize initial active nav styling
-    setActiveStage('understand');
-
-    // Navigation click handlers
+    // Set up click handlers for nav item buttons
     navItems.forEach(item => {
         const btn = item.querySelector('.process-nav-btn');
         btn?.addEventListener('click', (e) => {
             e.preventDefault();
-            const step = item.getAttribute('data-step');
-            if (!step) return;
-
-            const targetStage = document.querySelector(`.process-stage-block[data-stage="${step}"]`);
-            if (targetStage) {
-                setActiveStage(step);
-                const targetY = targetStage.getBoundingClientRect().top + window.scrollY - 120;
-                window.scrollTo({ top: targetY, behavior: 'smooth' });
+            const stage = item.getAttribute('data-stage');
+            if (stage) {
+                handleStageSwitch(stage);
             }
         });
     });
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    // 2. ScrollTrigger for 6 Stage Blocks
-    stageBlocks.forEach((block) => {
-        const stageKey = block.getAttribute('data-stage');
-        
-        ScrollTrigger.create({
-            trigger: block,
-            start: 'top 50%',
-            end: 'bottom 50%',
-            onEnter: () => setActiveStage(stageKey),
-            onEnterBack: () => setActiveStage(stageKey)
-        });
-
-        // Stage enter animation
-        gsap.fromTo(block,
-            { y: 40, opacity: 0.8 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.8,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: block,
-                    start: 'top 85%',
-                    toggleActions: 'play none none reverse'
-                }
-            }
-        );
-    });
-
-    // 3. SIGNATURE PINNED GSAP TRANSFORMATION SEQUENCE
+    // 2. SIGNATURE PINNED GSAP TRANSFORMATION SEQUENCE (UNCHANGED)
     const sigWrapper = document.getElementById('signature-sequence-wrapper');
     const sigPinnedContainer = document.getElementById('signature-pinned-container');
     const sigLayers = Array.from(document.querySelectorAll('.sig-layer'));

@@ -84,31 +84,39 @@ export function initExperience() {
 
     // --- 3. SCROLLTRIGGER ENTRANCE & PARALLAX REVEAL ---
     if (heritageTitle) {
-        gsap.from(heritageTitle, {
-            scrollTrigger: {
-                trigger: experienceSection,
-                start: 'top 75%',
-                toggleActions: 'play none none reverse'
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1.2,
-            ease: 'power4.out'
-        });
+        gsap.fromTo(heritageTitle,
+            { y: 40, opacity: 0 },
+            {
+                scrollTrigger: {
+                    trigger: experienceSection,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none',
+                    once: true
+                },
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                ease: 'power3.out'
+            }
+        );
     }
 
     if (floatingCards.length) {
-        gsap.from(floatingCards, {
-            scrollTrigger: {
-                trigger: experienceSection,
-                start: 'top 70%',
-                toggleActions: 'play none none reverse'
-            },
-            scale: 0.3,
-            opacity: 0,
-            duration: 1.2,
-            stagger: 0.15,
-            ease: 'back.out(1.7)'
-        });
+        gsap.fromTo(floatingCards,
+            { scale: 0.6, opacity: 0 },
+            {
+                scrollTrigger: {
+                    trigger: experienceSection,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none',
+                    once: true
+                },
+                scale: 1,
+                opacity: 1,
+                duration: 1.2,
+                stagger: 0.12,
+                ease: 'back.out(1.5)'
+            }
+        );
     }
 }

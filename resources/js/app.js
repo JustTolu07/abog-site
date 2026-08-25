@@ -52,6 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initExperience();
     initAbout();
     initProcess();
+
+    ScrollTrigger.refresh();
+    setTimeout(() => ScrollTrigger.refresh(), 300);
 });
+window.addEventListener('load', () => ScrollTrigger.refresh());
+
 
 
