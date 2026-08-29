@@ -53,7 +53,7 @@
                 <!-- Living Room Set -->
                 <div class="collection-image-set col-start-1 row-start-1 grid grid-cols-1 md:grid-cols-2 gap-8 w-full opacity-100 pointer-events-auto z-10" data-set="living-room">
                     <!-- Top Right Image -->
-                    <a href="#collections-section" class="collection-card lg:col-start-2 lg:col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card lg:col-start-2 lg:col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/living-room-main.png') }}" 
                             alt="Living Room Yellow Architectural Armchair" 
@@ -68,7 +68,7 @@
                     </a>
 
                     <!-- Bottom Left Image -->
-                    <a href="#collections-section" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/living-room-sub1.png') }}" 
                             alt="Minimalist Wooden Fluted Credenza" 
@@ -83,7 +83,7 @@
                     </a>
 
                     <!-- Bottom Right Image -->
-                    <a href="#collections-section" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/living-room-sub2.png') }}" 
                             alt="Modular Wooden Wall Shelving Unit" 
@@ -101,7 +101,7 @@
                 <!-- Kitchen Set -->
                 <div class="collection-image-set col-start-1 row-start-1 grid grid-cols-1 md:grid-cols-2 gap-8 w-full opacity-0 pointer-events-none z-0" data-set="kitchen">
                     <!-- Top Right Image -->
-                    <a href="#collections-section" class="collection-card lg:col-start-2 lg:col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card lg:col-start-2 lg:col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/kitchen-main.png') }}" 
                             alt="Modern Minimalist Kitchen Island" 
@@ -116,7 +116,7 @@
                     </a>
 
                     <!-- Bottom Left Image -->
-                    <a href="#collections-section" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/kitchen-sub1.png') }}" 
                             alt="Sleek kitchen counters and stools details" 
@@ -131,7 +131,7 @@
                     </a>
 
                     <!-- Bottom Right Image -->
-                    <a href="#collections-section" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/kitchen-sub2.png') }}" 
                             alt="Minimalist wooden floating kitchen shelves" 
@@ -149,7 +149,7 @@
                 <!-- Bedroom Set -->
                 <div class="collection-image-set col-start-1 row-start-1 grid grid-cols-1 md:grid-cols-2 gap-8 w-full opacity-0 pointer-events-none z-0" data-set="bedroom">
                     <!-- Top Right Image -->
-                    <a href="#collections-section" class="collection-card lg:col-start-2 lg:col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card lg:col-start-2 lg:col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/bedroom-main.png') }}" 
                             alt="Architectural oak platform bed" 
@@ -164,7 +164,7 @@
                     </a>
 
                     <!-- Bottom Left Image -->
-                    <a href="#collections-section" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/bedroom-sub1.png') }}" 
                             alt="Minimalist bedside table and designer lamp" 
@@ -179,7 +179,7 @@
                     </a>
 
                     <!-- Bottom Right Image -->
-                    <a href="#collections-section" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/bedroom-sub2.png') }}" 
                             alt="Boucle lounge chair in bedroom corner" 
@@ -197,7 +197,7 @@
                 <!-- Office Set -->
                 <div class="collection-image-set col-start-1 row-start-1 grid grid-cols-1 md:grid-cols-2 gap-8 w-full opacity-0 pointer-events-none z-0" data-set="office">
                     <!-- Top Right Image -->
-                    <a href="#collections-section" class="collection-card lg:col-start-2 lg:col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card lg:col-start-2 lg:col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/office-main.png') }}" 
                             alt="Premium home office setup with oak desk" 
@@ -212,7 +212,7 @@
                     </a>
 
                     <!-- Bottom Left Image -->
-                    <a href="#collections-section" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/office-sub1.png') }}" 
                             alt="Desk details and executive chair" 
@@ -227,7 +227,7 @@
                     </a>
 
                     <!-- Bottom Right Image -->
-                    <a href="#collections-section" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
+                    <a href="{{ route('collections') }}" class="collection-card rounded-2xl overflow-hidden shadow-xl aspect-square relative group bg-stone-200 cursor-pointer block">
                         <img 
                             src="{{ asset('assets/collections/office-sub2.png') }}" 
                             alt="Minimalist wooden storage credenza" 

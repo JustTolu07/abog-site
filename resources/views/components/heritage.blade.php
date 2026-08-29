@@ -13,22 +13,22 @@
 
             <!-- Card 1 (Horizontal 16:9) -->
             <div class="w-[320px] sm:w-[480px] md:w-[600px] aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-stone-800 bg-stone-900 shrink-0 group hover:scale-[1.02] transition-transform duration-500">
-                <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-00-42.jpg') }}" alt="Crafted Space 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-03.jpg') }}" alt="Crafted Space 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
 
             <!-- Card 2 (Horizontal 16:9) -->
             <div class="w-[300px] sm:w-[450px] md:w-[550px] aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-stone-800 bg-stone-900 shrink-0 group hover:scale-[1.02] transition-transform duration-500">
-                <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-00-45.jpg') }}" alt="Crafted Space 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="{{ asset('assets/projects/umaiha/conso2.jpg') }}" alt="Crafted Space 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
 
             <!-- Card 3 (Horizontal 16:9) -->
             <div class="w-[340px] sm:w-[500px] md:w-[620px] aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-stone-800 bg-stone-900 shrink-0 group hover:scale-[1.02] transition-transform duration-500">
-                <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-00-49.jpg') }}" alt="Crafted Space 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="{{ asset('assets/projects/umaiha/cons3.jpg') }}" alt="Crafted Space 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
 
             <!-- Card 4 (Horizontal 16:9) -->
             <div class="w-[310px] sm:w-[460px] md:w-[580px] aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-stone-800 bg-stone-900 shrink-0 group hover:scale-[1.02] transition-transform duration-500">
-                <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-00-50.jpg') }}" alt="Crafted Space 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="{{ asset('assets/projects/umaiha/wallrob.jpg') }}" alt="Crafted Space 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
 
             <!-- Card 5 (Horizontal 16:9) -->
@@ -43,19 +43,19 @@
 
             <!-- DUPLICATED CARDS FOR SEAMLESS CONTINUOUS INFINITE LOOP ANIMATION -->
             <div class="w-[320px] sm:w-[480px] md:w-[600px] aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-stone-800 bg-stone-900 shrink-0 group hover:scale-[1.02] transition-transform duration-500">
-                <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-00-42.jpg') }}" alt="Crafted Space 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-03.jpg') }}" alt="Crafted Space 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
 
             <div class="w-[300px] sm:w-[450px] md:w-[550px] aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-stone-800 bg-stone-900 shrink-0 group hover:scale-[1.02] transition-transform duration-500">
-                <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-00-45.jpg') }}" alt="Crafted Space 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="{{ asset('assets/projects/umaiha/conso2.jpg') }}" alt="Crafted Space 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
 
             <div class="w-[340px] sm:w-[500px] md:w-[620px] aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-stone-800 bg-stone-900 shrink-0 group hover:scale-[1.02] transition-transform duration-500">
-                <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-00-49.jpg') }}" alt="Crafted Space 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="{{ asset('assets/projects/umaiha/cons3.jpg') }}" alt="Crafted Space 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
 
             <div class="w-[310px] sm:w-[460px] md:w-[580px] aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-stone-800 bg-stone-900 shrink-0 group hover:scale-[1.02] transition-transform duration-500">
-                <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-00-50.jpg') }}" alt="Crafted Space 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="{{ asset('assets/projects/umaiha/wallrob.jpg') }}" alt="Crafted Space 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
 
         </div>

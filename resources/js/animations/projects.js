@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export function initProjects() {
-    const projectsSection = document.querySelector('#projects-section');
+    const projectsSection = document.querySelector('#projects-section') || document.querySelector('#projects-grid') || document.querySelector('.projects-page');
     const cursorBtn = document.querySelector('#project-cursor-btn');
     const projectItems = document.querySelectorAll('.project-item');
     const projectCards = document.querySelectorAll('.project-card');

@@ -106,7 +106,7 @@
                 </div>
                 <div class="mt-16 grid gap-12 lg:grid-cols-12">
                     <figure class="about-project-image relative aspect-[4/3] overflow-hidden bg-stone-200 lg:col-span-6">
-                        <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-00-45.jpg') }}"
+                        <img src="{{ asset('assets/projects/umaiha/conso2.jpg') }}"
                             alt="ABog-made interior space" class="h-[112%] w-full object-cover" loading="lazy">
                     </figure>
                     <div class="flex flex-col justify-center lg:col-span-5 lg:col-start-8">
@@ -155,7 +155,7 @@
                         </article>
                         <article class="about-team-card bg-stone-900 p-6">
                             <p class="text-xs font-semibold uppercase tracking-[.2em] text-[#8c7b6d]">03 — The design team
-                            </p><img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-13.jpg') }}"
+                            </p><img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-03.jpg') }}"
                                 alt="ABog design detail" class="mt-8 aspect-square w-full object-cover">
                             <p class="mt-6 text-sm leading-relaxed text-stone-400">The minds that translate how people live
                                 into spaces that work beautifully.</p>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="mt-16 grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-12">
                     <figure class="about-people-image col-span-1 overflow-hidden bg-stone-800 lg:col-span-4 lg:mt-20"><img
-                            src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-13.jpg') }}"
+                            src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-05.jpg') }}"
                             alt="Detail from an ABog project" class="h-full w-full object-cover" loading="lazy"></figure>
                     <figure class="about-people-image col-span-1 overflow-hidden bg-stone-800 lg:col-span-4"><img
                             src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-18.jpg') }}"
@@ -287,7 +287,7 @@
                         <p class="font-display text-7xl font-black leading-none tracking-tighter md:text-9xl">ABOG</p>
                         <p class="mt-5 text-sm font-semibold uppercase tracking-[.2em] text-[#8c7b6d]">Since 1990.</p>
                         <p class="mt-3 max-w-xs text-sm leading-relaxed text-stone-400">Made with experience.<br>Built for
-                            what comes next.</p><a href="{{ url('/#projects-section') }}"
+                            what comes next.</p><a href="{{ route('projects') }}"
                             class="mt-10 inline-flex w-fit items-center gap-5 rounded-full bg-[#8c7b6d] py-3 pl-6 pr-3 text-sm font-medium transition-colors hover:bg-[#9c8c7d]">See
                             our work <span
                                 class="flex h-7 w-7 items-center justify-center rounded-full bg-white text-lg text-[#8c7b6d]">&rsaquo;</span></a>

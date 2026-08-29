@@ -17,7 +17,7 @@
         </a>
 
         <!-- About -->
-        <a href="{{ request()->routeIs('home') ? route('home').'#about-section' : route('about') }}" 
+        <a href="{{ route('about') }}" 
            class="relative py-1 nav-link transition-colors duration-300 group {{ request()->routeIs('about') ? 'text-[#8c7b6d] font-bold' : 'text-stone-400 hover:text-white' }}" 
            aria-current="{{ request()->routeIs('about') ? 'page' : 'false' }}">
             About
@@ -41,10 +41,11 @@
         </a>
 
         <!-- Projects -->
-        <a href="{{ route('home') }}#projects-section" 
-           class="relative py-1 nav-link transition-colors duration-300 group text-stone-400 hover:text-white">
+        <a href="{{ route('projects') }}" 
+           class="relative py-1 nav-link transition-colors duration-300 group {{ request()->routeIs('projects*') ? 'text-[#8c7b6d] font-bold' : 'text-stone-400 hover:text-white' }}" 
+           aria-current="{{ request()->routeIs('projects*') ? 'page' : 'false' }}">
             Projects
-            <span class="absolute bottom-0 left-0 w-full h-[2px] nav-line bg-[#8c7b6d] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span class="absolute bottom-0 left-0 w-full h-[2px] nav-line bg-[#8c7b6d] transition-transform duration-300 origin-left {{ request()->routeIs('projects*') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100' }}"></span>
         </a>
     </nav>
 
@@ -83,7 +84,7 @@
                 <a href="{{ route('collections') }}" class="block py-2 focus:underline {{ request()->routeIs('collections*') ? 'text-[#8c7b6d] font-bold' : 'text-stone-400 hover:text-white' }}" aria-current="{{ request()->routeIs('collections*') ? 'page' : 'false' }}">Collections</a>
             </div>
             <div class="mobile-nav-item overflow-hidden">
-                <a href="{{ route('home') }}#projects-section" class="block text-stone-400 hover:text-white py-2 focus:underline">Projects</a>
+                <a href="{{ route('projects') }}" class="block py-2 focus:underline {{ request()->routeIs('projects*') ? 'text-[#8c7b6d] font-bold' : 'text-stone-400 hover:text-white' }}" aria-current="{{ request()->routeIs('projects*') ? 'page' : 'false' }}">Projects</a>
             </div>
             
             <div class="mobile-nav-item overflow-hidden pt-6">

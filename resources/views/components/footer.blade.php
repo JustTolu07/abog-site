@@ -20,16 +20,11 @@
                 Navigation
             </span>
             <ul class="space-y-3 font-sans text-sm md:text-base font-medium">
-                <li><a href="#hero-section" class="text-stone-300 hover:text-white transition-colors">Home</a></li>
-                <li><a href="{{ route('about') }}" class="text-stone-400 hover:text-white transition-colors">About
-                        us</a></li>
-                <li><a href="#heritage-section" class="text-stone-400 hover:text-white transition-colors">Processes</a>
-                </li>
-                <li><a href="#collections-section"
-                        class="text-stone-400 hover:text-white transition-colors">Collections</a>
-                </li>
-                <li><a href="#projects-section" class="text-stone-400 hover:text-white transition-colors">Projects</a>
-                </li>
+                <li><a href="{{ route('home') }}" class="text-stone-300 hover:text-white transition-colors">Home</a></li>
+                <li><a href="{{ route('about') }}" class="text-stone-400 hover:text-white transition-colors">About us</a></li>
+                <li><a href="{{ route('process') }}" class="text-stone-400 hover:text-white transition-colors">Processes</a></li>
+                <li><a href="{{ route('collections') }}" class="text-stone-400 hover:text-white transition-colors">Collections</a></li>
+                <li><a href="{{ route('projects') }}" class="text-stone-400 hover:text-white transition-colors">Projects</a></li>
             </ul>
         </div>
 

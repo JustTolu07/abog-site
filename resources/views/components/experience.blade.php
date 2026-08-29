@@ -10,35 +10,35 @@
         <!-- Card 1: Top-Left -->
         <div
             class="floating-card absolute -top-4 left-4 md:top-2 md:left-12 -rotate-12 w-28 md:w-44 aspect-square rounded-2xl overflow-hidden border-2 border-stone-600/60 shadow-2xl cursor-pointer group z-10 transition-all duration-500">
-            <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-13.jpg') }}" alt="Craftsman at Work"
+            <img src="{{ asset('assets/collections/wall-unit.png') }}" alt="Craftsman at Work"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
         </div>
 
         <!-- Card 2: Top-Center -->
         <div
             class="floating-card absolute -top-12 left-1/2 -translate-x-1/2 -rotate-6 w-24 md:w-36 aspect-square rounded-2xl overflow-hidden border-2 border-stone-600/60 shadow-2xl cursor-pointer group z-10 transition-all duration-500">
-            <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-16.jpg') }}" alt="Factory Precision"
+            <img src="{{ asset('assets/foot.jpg') }}" alt="Factory Precision"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
         </div>
 
         <!-- Card 3: Top-Right -->
         <div
             class="floating-card absolute -top-4 right-4 md:top-4 md:right-16 rotate-12 w-32 md:w-48 aspect-square rounded-2xl overflow-hidden border-2 border-stone-600/60 shadow-2xl cursor-pointer group z-10 transition-all duration-500">
-            <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-17.jpg') }}" alt="Joinery Assembly"
+            <img src="{{ asset('assets/collections/living-room-main.png') }}" alt="Joinery Assembly"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
         </div>
 
         <!-- Card 4: Bottom-Left -->
         <div
             class="floating-card absolute -bottom-6 left-2 md:-bottom-2 md:left-16 -rotate-12 w-32 md:w-48 aspect-square rounded-2xl overflow-hidden border-2 border-stone-600/60 shadow-2xl cursor-pointer group z-10 transition-all duration-500">
-            <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-18.jpg') }}" alt="Hand Finishing"
+            <img src="{{ asset('assets/projects/umaiha/conso2.jpg') }}" alt="Hand Finishing"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
         </div>
 
         <!-- Card 5: Bottom-Right -->
         <div
             class="floating-card absolute -bottom-6 right-2 md:-bottom-2 md:right-16 rotate-15 w-28 md:w-44 aspect-square rounded-2xl overflow-hidden border-2 border-stone-600/60 shadow-2xl cursor-pointer group z-10 transition-all duration-500">
-            <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-07.jpg') }}" alt="Site Installation"
+            <img src="{{ asset('assets/projects/umaiha/photo_2026-08-21_08-01-05.jpg') }}" alt="Site Installation"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
         </div>
 

@@ -575,7 +575,7 @@
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="{{ route('home') }}#collections-section" class="w-full sm:w-auto inline-flex items-center justify-center pl-8 pr-4 py-4 bg-[#8c7b6d] hover:bg-[#7a6a5c] text-white font-sans text-base font-medium rounded-full transition-all duration-300 shadow-lg group">
+                <a href="{{ route('collections') }}" class="w-full sm:w-auto inline-flex items-center justify-center pl-8 pr-4 py-4 bg-[#8c7b6d] hover:bg-[#7a6a5c] text-white font-sans text-base font-medium rounded-full transition-all duration-300 shadow-lg group">
                     <span>EXPLORE OUR COLLECTIONS</span>
                     <span class="w-8 h-8 ml-6 rounded-full bg-white flex items-center justify-center text-[#8c7b6d] group-hover:translate-x-1 transition-transform duration-300">
                         &rsaquo;
