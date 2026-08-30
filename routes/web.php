@@ -14,3 +14,15 @@ Route::get('/collections', [App\Http\Controllers\CollectionController::class, 'i
 Route::get('/collections/{category}', [App\Http\Controllers\CollectionController::class, 'showCategory'])->name('collections.category');
 Route::get('/collections/{category}/{product}', [App\Http\Controllers\ProductController::class, 'show'])->name('collections.product');
 
+// Admin Management Routes
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', function () {
+        return redirect()->route('admin.products.index');
+    });
+    Route::get('/dashboard', function () {
+        return redirect()->route('admin.products.index');
+    })->name('dashboard');
+    Route::resource('products', App\Http\Controllers\Admin\ProductController::class);
+});
+
+
