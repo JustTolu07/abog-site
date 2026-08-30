@@ -20,15 +20,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         if (config('database.default') === 'sqlite') {
-            $dbPath = config('database.connections.sqlite.database');
-            if ($dbPath && !file_exists($dbPath) && str_ends_with($dbPath, '.sqlite')) {
-                @mkdir(dirname($dbPath), 0755, true);
+            $dbPath = database_path('database.sqlite');
+            @mkdir(dirname($dbPath), 0777, true);
+            if (!file_exists($dbPath) || filesize($dbPath) === 0) {
                 @touch($dbPath);
+                @chmod($dbPath, 0777);
                 try {
-                    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
-                    \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
+                    \Illuminate\Support\Facades\Artisan::call('migrate:fresh', ['--seed' => true, '--force' => true]);
                 } catch (\Throwable $e) {
-                    // Ignore migration errors if already handled
+                    // Ignore
                 }
             }
         }
