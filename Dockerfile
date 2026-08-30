@@ -16,13 +16,10 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader \
     && npm install \
     && npm run build \
-    && mkdir -p database storage bootstrap/cache \
+    && mkdir -p database storage/app storage/framework/sessions storage/framework/views storage/framework/cache storage/logs bootstrap/cache \
     && touch database/database.sqlite \
     && chmod -R 777 database storage bootstrap/cache \
-    && php artisan migrate --force \
-    && php artisan config:cache \
-    && php artisan route:cache \
-    && php artisan view:cache
+    && php artisan migrate:fresh --seed --force
 
 EXPOSE 10000
 
