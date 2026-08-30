@@ -9,11 +9,12 @@ composer install --no-dev --optimize-autoloader
 npm install
 npm run build
 
-# Ensure database exists (SQLite) and run migrations
-touch database/database.sqlite
-php artisan migrate --force
+# Create required directories
+mkdir -p database storage/app storage/framework/sessions storage/framework/views storage/framework/cache storage/logs bootstrap/cache
 
-# Optimize Laravel configuration and routes caching
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+# Set permissions
+chmod -R 775 storage bootstrap/cache
+
+# Ensure database exists (SQLite) and run migrations + seed
+touch database/database.sqlite
+php artisan migrate:fresh --seed --force
