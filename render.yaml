@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: abog-site
+    env: php
+    buildCommand: ./build.sh
+    startCommand: vendor/bin/heroku-php-nginx public/
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_URL
+        sync: false
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: LOG_CHANNEL
+        value: stderr
