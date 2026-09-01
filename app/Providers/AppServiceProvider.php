@@ -19,6 +19,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if ($this->app->environment('production') || env('APP_ENV') === 'production' || request()->header('X-Forwarded-Proto') === 'https') {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
+
         if (config('database.default') === 'sqlite') {
             $dbPath = database_path('database.sqlite');
             @mkdir(dirname($dbPath), 0777, true);
