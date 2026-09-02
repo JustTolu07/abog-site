@@ -15,6 +15,7 @@ export function initAbout() {
         if (isReduced) {
             gsap.set(aboutWords, { opacity: 1, color: '#1c1917' });
             if (aboutBtnContainer) gsap.set(aboutBtnContainer, { opacity: 1, y: 0 });
+            gsap.set(aboutSection, { borderTopLeftRadius: 0, borderTopRightRadius: 0 });
         } else {
             // Initial state: Words faded
             gsap.set(aboutWords, { opacity: 0.25, color: '#a8a29e' });
@@ -22,6 +23,28 @@ export function initAbout() {
 
             const triggerEl = aboutPinTrigger || aboutSection;
 
+            // 1A. Docking transition: Animate top border radius from rounded card (3rem) to 0px as card enters & pins at top:0
+            const initialRadius = window.innerWidth >= 768 ? '48px' : '24px';
+            gsap.fromTo(aboutSection,
+                {
+                    borderTopLeftRadius: initialRadius,
+                    borderTopRightRadius: initialRadius,
+                },
+                {
+                    borderTopLeftRadius: '0px',
+                    borderTopRightRadius: '0px',
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: triggerEl,
+                        start: 'top 95%',
+                        end: 'top top',
+                        scrub: true,
+                        invalidateOnRefresh: true
+                    }
+                }
+            );
+
+            // 1B. Word-by-word reveal timeline while pinned
             const aboutTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: triggerEl,
@@ -49,6 +72,18 @@ export function initAbout() {
                     duration: 0.8,
                     ease: 'power2.out'
                 }, 2.8);
+            }
+
+            // 1C. Gracefully fade and scale out About content near end of pin as Collections section enters
+            const aboutContent = aboutSection.querySelector('.max-w-5xl');
+            if (aboutContent) {
+                aboutTl.to(aboutContent, {
+                    opacity: 0,
+                    scale: 0.96,
+                    y: -30,
+                    duration: 1.0,
+                    ease: 'power1.in'
+                }, 3.4);
             }
         }
     }

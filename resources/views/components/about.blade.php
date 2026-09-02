@@ -1,5 +1,5 @@
 <div id="about-pin-trigger" class="relative h-[280vh] w-full z-40">
-    <section id="about-section" class="sticky top-0 h-screen w-full bg-[#f5f3ef] text-stone-900 flex flex-col justify-center px-6 md:px-16 lg:px-24 py-12 select-none shadow-[0_-20px_50px_rgba(0,0,0,0.5)] rounded-t-3xl md:rounded-t-[3rem] overflow-hidden">
+    <section id="about-section" class="sticky top-0 h-screen w-full bg-[#f5f3ef] text-stone-900 flex flex-col justify-center px-6 md:px-16 lg:px-24 py-12 select-none shadow-[0_-20px_50px_rgba(0,0,0,0.5)] overflow-hidden style-about-card">
         <div class="max-w-5xl mx-auto w-full">
             <!-- Section Subtitle -->
             <div class="mb-6 md:mb-10">

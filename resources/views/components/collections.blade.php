@@ -1,4 +1,4 @@
-<section id="collections-section" class="relative z-40 min-h-screen w-full bg-[#f5f3ef] text-stone-900 flex flex-col justify-center px-6 md:px-16 lg:px-24 py-24 select-none shadow-[0_-20px_50px_rgba(0,0,0,0.5)] rounded-t-3xl md:rounded-t-[3rem]">
+<section id="collections-section" class="relative z-40 min-h-screen w-full bg-[#f5f3ef] text-stone-900 flex flex-col justify-center px-6 md:px-16 lg:px-24 py-24 select-none">
     <div class="max-w-7xl mx-auto w-full">
         <!-- Top Section Header: Category Tag & Main Heading -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-start">
